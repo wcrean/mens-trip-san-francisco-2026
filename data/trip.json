@@ -1,9 +1,9 @@
 {
   "name": "Men's Trip 2026",
-  "subtitle": "San Francisco Planning Dashboard",
+  "subtitle": "The San Francisco Playbook",
   "location": "San Francisco, California",
   "dates": "October 21\u201325, 2026",
-  "version": "3.2",
+  "version": "3.4",
   "phases": [
     {
       "label": "Location",
@@ -18,22 +18,22 @@
     {
       "label": "Accommodations",
       "status": "current",
-      "summary": "Three options under consideration"
+      "summary": "Current mission: figure out where eight fraternity brothers are sleeping"
     },
     {
       "label": "Activities",
       "status": "progress",
-      "summary": "Some activities already selected"
+      "summary": "Rob has already put points on the board"
     },
     {
       "label": "Restaurants & Bars",
       "status": "not-started",
-      "summary": "Research phase"
+      "summary": "Plenty of important research still ahead"
     },
     {
       "label": "Men's Dinner",
       "status": "assigned",
-      "summary": "Roland to select"
+      "summary": "Roland has the honor \u2014 and the pressure"
     }
   ],
   "accommodations": [
@@ -114,19 +114,30 @@
     }
   ],
   "recommendation": {
-    "title": "Current leader: The Barnes",
-    "reason": "Already reserved, centrally located, and the least expensive confirmed option. The Airbnbs remain worth considering if shared house space is the top priority."
+    "title": "Current clubhouse leader: The Barnes",
+    "reason": "Gus already has it locked down, it is the cheapest confirmed option, and we can bail by October 15 if a better house appears. Solid veteran move by Gus."
   },
   "questions": [
-    "Confirm dates for Rob's two booked tours",
-    "Keep The Barnes reservation?",
-    "Get direct Airbnb links into the app",
+    "Confirm the dates for Rob's two booked tours",
+    "Are we keeping The Barnes, or does a house win the day?",
+    "Get the direct Airbnb links into the app",
     "Confirm Airbnb cancellation policies",
-    "Work out sleeping assignments",
+    "Sort out who gets beds, sofa beds, and the occasional character-building bunk",
     "Estimate Uber and transit costs by neighborhood",
-    "Decide how much shared gathering space matters"
+    "Decide how much shared gathering space matters",
+    "Has Roland found the legendary Men's Dinner yet?"
   ],
   "notes": [
+    {
+      "date": "July 2026",
+      "author": "Bill",
+      "text": "Adjusted the app tone to sound more like the group: practical, brotherly, and lightly amused."
+    },
+    {
+      "date": "July 2026",
+      "author": "Bill",
+      "text": "Clarified that Jason will wait at SFO for the group rather than going to the hotel early; he may have a drink while waiting."
+    },
     {
       "date": "July 2026",
       "author": "Bill",
@@ -280,7 +291,7 @@
       "airline": "United",
       "flight": "Flight number TBD",
       "origin": "Nashville",
-      "meetup": "Earliest arrival; can head toward the hotel or wait for the noon arrivals."
+      "meetup": "Will hold down the fort at SFO and wait for the crew \u2014 quite possibly with a cold beverage in hand."
     },
     {
       "traveler": "Roland",
@@ -289,7 +300,7 @@
       "airline": "Alaska Airlines",
       "flight": "1403",
       "origin": "Portland",
-      "meetup": "Arrives shortly before Bill and the Texas crew."
+      "meetup": "Lands shortly before Bill and the Texas crew. Excellent timing, Roland."
     },
     {
       "traveler": "Bill and the Texas crew",
@@ -298,7 +309,7 @@
       "airline": "American Airlines",
       "flight": "2387",
       "origin": "Dallas/Fort Worth",
-      "meetup": "Good target group for a shared ride from SFO."
+      "meetup": "The main wave. Natural group for the ride into the city."
     },
     {
       "traveler": "Avi",
@@ -307,11 +318,11 @@
       "airline": "Airline TBD",
       "flight": "Flight number TBD",
       "origin": "Origin TBD",
-      "meetup": "Plans to meet the group at the hotel."
+      "meetup": "Bringing up the rear and meeting the brotherhood at the hotel."
     }
   ],
   "arrivalSummary": {
-    "title": "Best meetup plan",
-    "text": "Jason arrives first. Roland and Bill/Texas land only 22 minutes apart, making them the natural group for a shared ride. Avi arrives later and will meet everyone at the hotel."
+    "title": "Airport game plan",
+    "text": "Jason lands first and will hold down the fort at SFO, possibly with a cold beverage. Roland and Bill/Texas arrive only 22 minutes apart, setting up the main airport reunion. Avi rolls in later and will meet the brotherhood at the hotel."
   }
 }
