@@ -7,3 +7,22 @@
 .activity-meta span{display:flex;flex-direction:column;background:var(--surface2);padding:12px;border-radius:14px;color:var(--muted)}
 .activity-meta strong{color:var(--text)}
 @media(max-width:650px){.responsibility-grid{grid-template-columns:1fr}.responsibility-card{align-items:flex-start}.owner{min-width:auto}.activity-meta{grid-template-columns:1fr}}
+
+.hero{background-image:linear-gradient(90deg,rgba(10,15,20,.82),rgba(10,15,20,.22)),var(--hero-image);background-size:cover;background-position:center}
+.hero-credit{display:inline-block;margin-top:10px;color:rgba(255,255,255,.8);font-size:.78rem;text-decoration:none;border-bottom:1px solid rgba(255,255,255,.35)}
+.visual-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}
+.visual-card{position:relative;min-height:330px;overflow:hidden;border-radius:24px;box-shadow:var(--shadow);background:#17212b}
+.visual-card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.visual-card::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 25%,rgba(8,12,16,.88))}
+.visual-overlay{position:absolute;z-index:2;left:20px;right:20px;bottom:20px}
+.visual-overlay p{margin:0;color:#f2bd84;text-transform:uppercase;letter-spacing:.12em;font-size:.72rem;font-weight:900}
+.visual-overlay h3{font-size:1.7rem;margin:4px 0}
+.visual-overlay span{color:rgba(255,255,255,.86)}
+.card-photo{width:calc(100% + 40px);height:190px;object-fit:cover;margin:-20px -20px 18px;border-radius:20px 20px 0 0}
+.activity-card{overflow:hidden}
+.photo-credit-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.photo-credit{display:flex;flex-direction:column;text-decoration:none;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:13px}
+.photo-credit span{font-size:.82rem;color:var(--muted)}
+.status-selected{font-weight:900}
+@media(max-width:800px){.visual-grid{grid-template-columns:1fr 1fr}.visual-card:first-child{grid-column:1/-1}}
+@media(max-width:600px){.visual-grid{display:flex;overflow-x:auto;scroll-snap-type:x mandatory}.visual-card,.visual-card:first-child{min-width:86%;min-height:320px;scroll-snap-align:start}.photo-credit-list{grid-template-columns:1fr}.hero{background-position:58% center}}

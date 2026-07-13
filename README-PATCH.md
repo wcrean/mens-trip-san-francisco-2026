@@ -1,4 +1,4 @@
-# Men's Trip Build 2 Patch
+# Men's Trip Build 3 Patch
 
 Changed files only:
 
@@ -8,4 +8,4 @@ Changed files only:
 - `js/app.js`
 - `css/styles.css`
 
-Adds Group Responsibilities near the top and two booked activities from Rob Baker. Both activity dates remain marked TBD.
+Adds a Golden Gate hero image, Alcatraz/Muir Woods/cable-car visual cards, photo-backed activity cards, photo credits, and green checkmarks before completed statuses such as Selected, Reserved, and Booked.

@@ -3,7 +3,7 @@
   "subtitle": "San Francisco Planning Dashboard",
   "location": "San Francisco, California",
   "dates": "October 21\u201325, 2026",
-  "version": "2.0",
+  "version": "3.0",
   "phases": [
     {
       "label": "Location",
@@ -213,6 +213,58 @@
       "summary": "Flexible sightseeing bus tour. Exact operator, ticket duration, and date still need to be added.",
       "website": "",
       "source": "Family planning information"
+    }
+  ],
+  "images": {
+    "hero": {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Golden_Gate_Bridge_from_Battery_Spencer.jpg?width=1800",
+      "alt": "Golden Gate Bridge with San Francisco in the background",
+      "credit": "Wattewyl / Wikimedia Commons, CC BY 3.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Golden_Gate_Bridge_from_Battery_Spencer.jpg"
+    },
+    "alcatraz": {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Alcatraz_Island_aerial_view.jpg?width=1400",
+      "alt": "Aerial view of Alcatraz Island",
+      "credit": "J\u00f6rg Schubert / Wikimedia Commons, CC BY-SA",
+      "source": "https://commons.wikimedia.org/wiki/File:Alcatraz_Island_aerial_view.jpg"
+    },
+    "muir": {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Looking_Up_at_Redwoods_%2818216711785%29.jpg?width=1400",
+      "alt": "Looking up at redwoods in Muir Woods",
+      "credit": "Eric Kilby / Wikimedia Commons, CC BY-SA 2.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Looking_Up_at_Redwoods_(18216711785).jpg"
+    },
+    "cablecar": {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/SF_Cable_Car.jpg?width=1400",
+      "alt": "San Francisco cable car",
+      "credit": "Jon Sullivan / Wikimedia Commons, public domain",
+      "source": "https://commons.wikimedia.org/wiki/File:SF_Cable_Car.jpg"
+    }
+  },
+  "photoCredits": [
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Golden_Gate_Bridge_from_Battery_Spencer.jpg?width=1800",
+      "alt": "Golden Gate Bridge with San Francisco in the background",
+      "credit": "Wattewyl / Wikimedia Commons, CC BY 3.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Golden_Gate_Bridge_from_Battery_Spencer.jpg"
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Alcatraz_Island_aerial_view.jpg?width=1400",
+      "alt": "Aerial view of Alcatraz Island",
+      "credit": "J\u00f6rg Schubert / Wikimedia Commons, CC BY-SA",
+      "source": "https://commons.wikimedia.org/wiki/File:Alcatraz_Island_aerial_view.jpg"
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Looking_Up_at_Redwoods_%2818216711785%29.jpg?width=1400",
+      "alt": "Looking up at redwoods in Muir Woods",
+      "credit": "Eric Kilby / Wikimedia Commons, CC BY-SA 2.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Looking_Up_at_Redwoods_(18216711785).jpg"
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/SF_Cable_Car.jpg?width=1400",
+      "alt": "San Francisco cable car",
+      "credit": "Jon Sullivan / Wikimedia Commons, public domain",
+      "source": "https://commons.wikimedia.org/wiki/File:SF_Cable_Car.jpg"
     }
   ]
 }
