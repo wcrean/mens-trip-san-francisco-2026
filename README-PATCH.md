@@ -1,11 +1,8 @@
-# Men's Trip Build 3 Patch
+# Men's Trip Build 3.1 Patch
 
 Changed files only:
 
-- `index.html`
-- `sw.js`
-- `data/trip.json`
-- `js/app.js`
 - `css/styles.css`
+- `sw.js`
 
-Adds a Golden Gate hero image, Alcatraz/Muir Woods/cable-car visual cards, photo-backed activity cards, photo credits, and green checkmarks before completed statuses such as Selected, Reserved, and Booked.
+Fixes the light-mode hero contrast by keeping the hero text white and preserving a dark image overlay in both themes.
