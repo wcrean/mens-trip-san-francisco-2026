@@ -3,7 +3,7 @@
   "subtitle": "San Francisco Planning Dashboard",
   "location": "San Francisco, California",
   "dates": "October 21\u201325, 2026",
-  "version": "1.0",
+  "version": "2.0",
   "phases": [
     {
       "label": "Location",
@@ -118,6 +118,7 @@
     "reason": "Already reserved, centrally located, and the least expensive confirmed option. The Airbnbs remain worth considering if shared house space is the top priority."
   },
   "questions": [
+    "Confirm dates for Rob's two booked tours",
     "Keep The Barnes reservation?",
     "Get direct Airbnb links into the app",
     "Confirm Airbnb cancellation policies",
@@ -128,6 +129,11 @@
   "notes": [
     {
       "date": "July 2026",
+      "author": "Rob Baker",
+      "text": "Booked the Alcatraz / Muir Woods / Sausalito tour and a hop-on, hop-off San Francisco bus tour. Dates are still unknown."
+    },
+    {
+      "date": "July 2026",
       "author": "Gus",
       "text": "Reserved three rooms at The Barnes for $4,246 total. Cancelable through October 15."
     },
@@ -135,6 +141,78 @@
       "date": "July 2026",
       "author": "James",
       "text": "Suggested Golden Gate Park 4BR Home and The Surf Shack as Airbnb alternatives."
+    }
+  ],
+  "responsibilities": [
+    {
+      "task": "Location",
+      "owner": "Group",
+      "status": "Selected",
+      "detail": "San Francisco"
+    },
+    {
+      "task": "Dates",
+      "owner": "Group",
+      "status": "Selected",
+      "detail": "October 21\u201325, 2026"
+    },
+    {
+      "task": "Hotel reservation",
+      "owner": "Gus",
+      "status": "Reserved",
+      "detail": "The Barnes; cancelable through October 15"
+    },
+    {
+      "task": "Airbnb research",
+      "owner": "James",
+      "status": "In progress",
+      "detail": "Golden Gate Park home and Surf Shack"
+    },
+    {
+      "task": "Alcatraz / Muir Woods / Sausalito tour",
+      "owner": "Rob Baker",
+      "status": "Booked",
+      "detail": "Date still unknown"
+    },
+    {
+      "task": "Hop-on, hop-off bus tour",
+      "owner": "Rob Baker",
+      "status": "Booked",
+      "detail": "Date still unknown"
+    },
+    {
+      "task": "Men's Dinner",
+      "owner": "Roland",
+      "status": "Assigned",
+      "detail": "Restaurant selection pending"
+    },
+    {
+      "task": "Restaurants and bars",
+      "owner": "Group",
+      "status": "Not started",
+      "detail": "Research and reservations"
+    }
+  ],
+  "activities": [
+    {
+      "name": "Alcatraz with Muir Woods and Sausalito Tour",
+      "status": "Booked",
+      "owner": "Rob Baker",
+      "date": "TBD",
+      "duration": "Approximately 7\u20138 hours",
+      "summary": "Full-day combination tour featuring Alcatraz, Muir Woods, and Sausalito.",
+      "website": "https://www.viator.com/tours/San-Francisco/Alcatraz-with-Muir-Woods-and-Sausalito-Tour/d651-152424P2?mcid=56757&dd_referrer=",
+      "source": "Viator listing supplied by Bill"
+    },
+    {
+      "name": "San Francisco Hop-On, Hop-Off Bus Tour",
+      "status": "Booked",
+      "owner": "Rob Baker",
+      "date": "TBD",
+      "duration": "To be confirmed",
+      "summary": "Flexible sightseeing bus tour. Exact operator, ticket duration, and date still need to be added.",
+      "website": "",
+      "source": "Family planning information"
     }
   ]
 }
