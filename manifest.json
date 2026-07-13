@@ -1,0 +1,17 @@
+{
+  "name": "Men's Trip 2026 Planning Dashboard",
+  "short_name": "Men's Trip",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#10171e",
+  "theme_color": "#17212b",
+  "icons": [
+    {
+      "src": "./assets/icons/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

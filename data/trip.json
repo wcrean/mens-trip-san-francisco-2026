@@ -1,0 +1,140 @@
+{
+  "name": "Men's Trip 2026",
+  "subtitle": "San Francisco Planning Dashboard",
+  "location": "San Francisco, California",
+  "dates": "October 21\u201325, 2026",
+  "version": "1.0",
+  "phases": [
+    {
+      "label": "Location",
+      "status": "selected",
+      "summary": "San Francisco, California"
+    },
+    {
+      "label": "Dates",
+      "status": "selected",
+      "summary": "October 21\u201325, 2026"
+    },
+    {
+      "label": "Accommodations",
+      "status": "current",
+      "summary": "Three options under consideration"
+    },
+    {
+      "label": "Activities",
+      "status": "progress",
+      "summary": "Some activities already selected"
+    },
+    {
+      "label": "Restaurants & Bars",
+      "status": "not-started",
+      "summary": "Research phase"
+    },
+    {
+      "label": "Men's Dinner",
+      "status": "assigned",
+      "summary": "Roland to select"
+    }
+  ],
+  "accommodations": [
+    {
+      "name": "The Barnes San Francisco",
+      "type": "Hotel",
+      "neighborhood": "Union Square",
+      "status": "Reserved",
+      "total": 4246,
+      "perPerson": 530,
+      "sleeping": "Two junior suites with king bed + sofa bed, plus one room with two queen beds",
+      "gathering": "Moderate \u2014 junior suites provide sitting space",
+      "cancellation": "Cancelable without penalty through October 15",
+      "pros": [
+        "Lowest confirmed price",
+        "Already reserved",
+        "Very central location",
+        "Flexible cancellation",
+        "Hotel services and housekeeping"
+      ],
+      "cons": [
+        "Group split across three rooms",
+        "Some men will use sofa beds or share beds",
+        "Less common space than a house"
+      ],
+      "website": "https://www.hilton.com/en/hotels/sfoonup-the-barnes-san-francisco/?arrivalDate=2026-10-21&departureDate=2026-10-25&flexibleDates=false&numRooms=3&room1NumAdults=2&room2NumAdults=2&room3NumAdults=2",
+      "source": "Gus"
+    },
+    {
+      "name": "Golden Gate Park 4BR Home",
+      "type": "Airbnb",
+      "neighborhood": "Near Golden Gate Park",
+      "status": "Under consideration",
+      "total": 4500,
+      "perPerson": 560,
+      "sleeping": "Four bedrooms; some men would need bunk beds",
+      "gathering": "Strong \u2014 entire house together",
+      "cancellation": "To be confirmed",
+      "pros": [
+        "Everyone stays together",
+        "Kitchen and shared living space",
+        "Garage",
+        "Metro access",
+        "Neighborhood restaurants nearby"
+      ],
+      "cons": [
+        "Bunk-bed assignments",
+        "Cancellation terms unknown",
+        "Less central for some nightlife"
+      ],
+      "website": "",
+      "source": "James"
+    },
+    {
+      "name": "The Surf Shack",
+      "type": "Airbnb",
+      "neighborhood": "Near the beach",
+      "status": "Premium option",
+      "total": 6800,
+      "perPerson": 850,
+      "sleeping": "Six or more beds; exact assignment to confirm",
+      "gathering": "Strong \u2014 entire house together",
+      "cancellation": "To be confirmed",
+      "pros": [
+        "Everyone under one roof",
+        "Hot tub",
+        "Memorable beach-area setting",
+        "Good group-house atmosphere"
+      ],
+      "cons": [
+        "Most expensive option",
+        "Farther from central San Francisco",
+        "Cancellation terms unknown",
+        "Higher transport costs likely"
+      ],
+      "website": "",
+      "source": "James"
+    }
+  ],
+  "recommendation": {
+    "title": "Current leader: The Barnes",
+    "reason": "Already reserved, centrally located, and the least expensive confirmed option. The Airbnbs remain worth considering if shared house space is the top priority."
+  },
+  "questions": [
+    "Keep The Barnes reservation?",
+    "Get direct Airbnb links into the app",
+    "Confirm Airbnb cancellation policies",
+    "Work out sleeping assignments",
+    "Estimate Uber and transit costs by neighborhood",
+    "Decide how much shared gathering space matters"
+  ],
+  "notes": [
+    {
+      "date": "July 2026",
+      "author": "Gus",
+      "text": "Reserved three rooms at The Barnes for $4,246 total. Cancelable through October 15."
+    },
+    {
+      "date": "July 2026",
+      "author": "James",
+      "text": "Suggested Golden Gate Park 4BR Home and The Surf Shack as Airbnb alternatives."
+    }
+  ]
+}
