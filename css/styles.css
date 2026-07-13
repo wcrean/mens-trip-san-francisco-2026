@@ -74,3 +74,14 @@ body.light .hero button{
       var(--hero-image);
   }
 }
+
+.arrival-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.arrival-card{display:grid;grid-template-columns:120px 1fr;gap:18px;align-items:start;background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:20px;box-shadow:var(--shadow)}
+.arrival-time{font-size:1.65rem;font-weight:900;color:var(--accent);line-height:1}
+.arrival-card h3{margin:.45rem 0 .15rem}
+.arrival-card p{margin:.35rem 0}
+.arrival-summary{margin-top:14px;background:linear-gradient(135deg,#223344,#17212b);border:1px solid #3e5366;border-radius:20px;padding:22px}
+.arrival-summary h3{font-size:1.6rem;margin:.25rem 0}
+body.light .arrival-summary{background:linear-gradient(135deg,#e4edf4,#f8fafb);color:#17212b}
+@media(max-width:750px){.arrival-grid{grid-template-columns:1fr}.arrival-card{grid-template-columns:100px 1fr}}
+@media(max-width:480px){.arrival-card{grid-template-columns:1fr}.arrival-time{margin-bottom:4px}}

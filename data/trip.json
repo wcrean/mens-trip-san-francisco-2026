@@ -3,7 +3,7 @@
   "subtitle": "San Francisco Planning Dashboard",
   "location": "San Francisco, California",
   "dates": "October 21\u201325, 2026",
-  "version": "3.0",
+  "version": "3.2",
   "phases": [
     {
       "label": "Location",
@@ -127,6 +127,11 @@
     "Decide how much shared gathering space matters"
   ],
   "notes": [
+    {
+      "date": "July 2026",
+      "author": "Bill",
+      "text": "Added incoming flight arrival times to coordinate the Wednesday meetup at SFO and the hotel."
+    },
     {
       "date": "July 2026",
       "author": "Rob Baker",
@@ -266,5 +271,47 @@
       "credit": "Jon Sullivan / Wikimedia Commons, public domain",
       "source": "https://commons.wikimedia.org/wiki/File:SF_Cable_Car.jpg"
     }
-  ]
+  ],
+  "arrivals": [
+    {
+      "traveler": "Jason",
+      "arrival": "10:57 AM",
+      "airport": "SFO",
+      "airline": "United",
+      "flight": "Flight number TBD",
+      "origin": "Nashville",
+      "meetup": "Earliest arrival; can head toward the hotel or wait for the noon arrivals."
+    },
+    {
+      "traveler": "Roland",
+      "arrival": "12:48 PM",
+      "airport": "SFO",
+      "airline": "Alaska Airlines",
+      "flight": "1403",
+      "origin": "Portland",
+      "meetup": "Arrives shortly before Bill and the Texas crew."
+    },
+    {
+      "traveler": "Bill and the Texas crew",
+      "arrival": "1:10 PM",
+      "airport": "SFO",
+      "airline": "American Airlines",
+      "flight": "2387",
+      "origin": "Dallas/Fort Worth",
+      "meetup": "Good target group for a shared ride from SFO."
+    },
+    {
+      "traveler": "Avi",
+      "arrival": "3:30 PM",
+      "airport": "SFO",
+      "airline": "Airline TBD",
+      "flight": "Flight number TBD",
+      "origin": "Origin TBD",
+      "meetup": "Plans to meet the group at the hotel."
+    }
+  ],
+  "arrivalSummary": {
+    "title": "Best meetup plan",
+    "text": "Jason arrives first. Roland and Bill/Texas land only 22 minutes apart, making them the natural group for a shared ride. Avi arrives later and will meet everyone at the hotel."
+  }
 }

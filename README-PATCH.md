@@ -1,8 +1,11 @@
-# Men's Trip Build 3.1 Patch
+# Men's Trip Build 3.2 Patch
 
 Changed files only:
 
-- `css/styles.css`
+- `index.html`
 - `sw.js`
+- `data/trip.json`
+- `js/app.js`
+- `css/styles.css`
 
-Fixes the light-mode hero contrast by keeping the hero text white and preserving a dark image overlay in both themes.
+Adds a prominent Arrival Coordination section with Wednesday SFO arrival times for Jason, Roland, Bill and the Texas crew, and Avi, plus a recommended meetup plan.
