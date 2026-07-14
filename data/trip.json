@@ -3,7 +3,7 @@
   "subtitle": "The San Francisco Playbook",
   "location": "San Francisco, California",
   "dates": "October 21\u201325, 2026",
-  "version": "4.1",
+  "version": "4.2",
   "phases": [
     {
       "label": "Location",
@@ -120,11 +120,6 @@
   "questions": [
     "Confirm the dates for Rob's two booked tours",
     "Are we keeping The Barnes, or does a house win the day?",
-    "Get the direct Airbnb links into the app",
-    "Confirm Airbnb cancellation policies",
-    "Sort out who gets beds, sofa beds, and the occasional character-building bunk",
-    "Estimate Uber and transit costs by neighborhood",
-    "Decide how much shared gathering space matters",
     "Has Roland found the legendary Men's Dinner yet?"
   ],
   "notes": [
