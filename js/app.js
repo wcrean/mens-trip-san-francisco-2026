@@ -10,41 +10,63 @@ const visuals=[
 $("#visual-grid").innerHTML=visuals.map(v=>`<article class="visual-card"><img src="${v.image.url}" alt="${esc(v.image.alt)}" loading="lazy"><div class="visual-overlay"><p>${esc(v.kicker)}</p><h3>${esc(v.title)}</h3><span>${esc(v.text)}</span></div></article>`).join("");
 $("#photo-credit-list").innerHTML=t.photoCredits.map(i=>`<a class="photo-credit" href="${i.source}" target="_blank" rel="noopener"><strong>${esc(i.credit)}</strong><span>${esc(i.alt)}</span></a>`).join("");const p=Math.round(t.phases.filter(x=>x.status==="selected").length/t.phases.length*100);$("#progress-label").textContent=`${p}% locked`;$("#progress-bar").style.width=`${p}%`;const allBars=[...t.walkableBars.initial,...t.walkableBars.bench];
 let sharedVotes={totals:{},mine:{}};
-let visibleBarIndexes=[0,1,2];
 let voteConnectionState="Connecting…";
 
-function chooseVisibleBars(){
-  const selected=[];
-  for(let i=0;i<allBars.length&&selected.length<3;i++){
-    const down=sharedVotes.totals[allBars[i].id]?.down||0;
-    if(down<t.walkableBars.replacementThreshold)selected.push(i);
-  }
-  for(let i=0;i<allBars.length&&selected.length<3;i++)if(!selected.includes(i))selected.push(i);
-  visibleBarIndexes=selected;
+function rankedBars(){
+  return [...allBars].sort((a,b)=>{
+    const av=sharedVotes.totals[a.id]||{up:0,down:0};
+    const bv=sharedVotes.totals[b.id]||{up:0,down:0};
+    const aScore=av.up-av.down;
+    const bScore=bv.up-bv.down;
+    return bScore-aScore || bv.up-av.up || av.down-bv.down || a.name.localeCompare(b.name);
+  });
 }
+
 function renderBars(){
-  chooseVisibleBars();
-  $("#bar-list").innerHTML=visibleBarIndexes.map(barIndex=>{
-    const b=allBars[barIndex],votes=sharedVotes.totals[b.id]||{up:0,down:0},mine=sharedVotes.mine[b.id]||null;
-    return `<article class="bar-card"><img src="${b.image}" alt="${esc(b.imageAlt)}" loading="lazy"><div class="bar-card-body">
-      <div class="bar-topline"><span class="status status-current">${esc(b.category)}</span><span class="bar-walk">${esc(b.walk)}</span></div>
-      <h3>${esc(b.name)}</h3><p>${esc(b.summary)}</p>
-      <div class="bar-links"><a class="pill" href="${b.website}" target="_blank" rel="noopener">Website</a><a class="pill" href="${b.maps}" target="_blank" rel="noopener">Map</a></div>
-      <div class="vote-row">
-        <button class="vote-button vote-up ${mine==="up"?"selected":""}" data-bar="${b.id}" data-vote="up" ${voteConnectionState!=="Live"?"disabled":""}>👍 I’m In <span>${votes.up}</span></button>
-        <button class="vote-button vote-down ${mine==="down"?"selected":""}" data-bar="${b.id}" data-vote="down" ${voteConnectionState!=="Live"?"disabled":""}>👎 Pass <span>${votes.down}</span></button>
-      </div></div></article>`;
+  $("#bar-list").innerHTML=rankedBars().map((b,index)=>{
+    const votes=sharedVotes.totals[b.id]||{up:0,down:0};
+    const mine=sharedVotes.mine[b.id]||null;
+    const score=votes.up-votes.down;
+    return `<article class="bar-card">
+      <div class="bar-photo-wrap">
+        <img src="${b.image}" alt="${esc(b.imageAlt)}" loading="lazy">
+        <span class="bar-rank">#${index+1}</span>
+        <a class="bar-photo-credit" href="${b.imageSource}" target="_blank" rel="noopener">${esc(b.imageCredit)}</a>
+      </div>
+      <div class="bar-card-body">
+        <div class="bar-topline"><span class="status status-current">${esc(b.category)}</span><span class="bar-walk">${esc(b.walk)}</span></div>
+        <h3>${esc(b.name)}</h3>
+        <p>${esc(b.summary)}</p>
+        <div class="bar-score"><strong>${score>0?"+":""}${score}</strong><span>group score</span></div>
+        <div class="bar-links"><a class="pill" href="${b.website}" target="_blank" rel="noopener">Website</a><a class="pill" href="${b.maps}" target="_blank" rel="noopener">Map</a></div>
+        <div class="vote-row">
+          <button class="vote-button vote-up ${mine==="up"?"selected":""}" data-bar="${b.id}" data-vote="up" ${voteConnectionState!=="Live"?"disabled":""}>👍 I’m In <span>${votes.up}</span></button>
+          <button class="vote-button vote-down ${mine==="down"?"selected":""}" data-bar="${b.id}" data-vote="down" ${voteConnectionState!=="Live"?"disabled":""}>👎 Pass <span>${votes.down}</span></button>
+        </div>
+      </div>
+    </article>`;
   }).join("");
+
   document.querySelectorAll("[data-vote]").forEach(button=>button.addEventListener("click",async()=>{
-    const barId=button.dataset.bar,requested=button.dataset.vote;
+    const barId=button.dataset.bar;
+    const requested=button.dataset.vote;
     const nextVote=sharedVotes.mine[barId]===requested?null:requested;
     button.disabled=true;
-    try{await setBarVote(barId,nextVote)}
-    catch(error){console.error(error);alert("The shared vote could not be saved. Check the connection and try again.");button.disabled=false}
+    try{
+      await setBarVote(barId,nextVote);
+    }catch(error){
+      console.error(error);
+      alert("The shared vote could not be saved. Check the connection and try again.");
+      button.disabled=false;
+    }
   }));
+
   const note=document.querySelector(".bar-vote-note");
-  if(note)note.innerHTML=`<span class="firebase-status ${voteConnectionState==="Live"?"live":""}">${voteConnectionState==="Live"?"● Live shared voting":"○ "+voteConnectionState}</span> ${esc(t.walkableBars.voteNote)}`;
+  if(note){
+    note.innerHTML=`<span class="firebase-status ${voteConnectionState==="Live"?"live":""}">${voteConnectionState==="Live"?"● Live shared voting":"○ "+voteConnectionState}</span> ${esc(t.walkableBars.voteNote)}`;
+  }
 }
+
 renderBars();
 ensureAnonymousUser().then(()=>subscribeToBarVotes(data=>{sharedVotes=data;voteConnectionState="Live";renderBars()},()=>{voteConnectionState="Connection problem";renderBars()})).catch(error=>{console.error(error);voteConnectionState="Firebase setup needed";renderBars()});$("#weather-placeholder-list").innerHTML=t.weatherPlaceholder.map(d=>`<div class="weather-row"><div><strong>${esc(d.day)}</strong><span>${esc(d.date)}</span></div><div>${esc(d.low)}</div><div>${esc(d.high)}</div><div>${esc(d.rain)}</div></div>`).join("");
 const now=new Date();

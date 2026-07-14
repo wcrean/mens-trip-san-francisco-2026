@@ -124,3 +124,11 @@ body.light .right-now-card::after{background:rgba(216,137,67,.14)}
 .vote-button:disabled{opacity:.62;cursor:wait}
 .firebase-status{display:inline-flex;align-items:center;margin-right:6px;font-weight:900}
 .firebase-status.live{color:#58b97a}
+
+.bar-photo-wrap{position:relative}
+.bar-photo-wrap img{width:100%;height:220px;object-fit:cover;display:block}
+.bar-rank{position:absolute;top:12px;left:12px;display:inline-flex;align-items:center;justify-content:center;min-width:46px;height:46px;border-radius:50%;background:rgba(16,23,30,.88);color:#fff;font-weight:950;font-size:1.05rem;box-shadow:0 6px 20px rgba(0,0,0,.3)}
+.bar-photo-credit{position:absolute;left:10px;right:10px;bottom:8px;padding:5px 8px;border-radius:9px;background:rgba(10,14,18,.72);color:rgba(255,255,255,.88);font-size:.68rem;text-decoration:none;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.bar-score{display:inline-flex;align-items:center;gap:7px;margin:6px 0 4px;padding:7px 10px;border-radius:999px;background:var(--surface2)}
+.bar-score strong{color:var(--accent);font-size:1.15rem}
+.bar-score span{font-size:.78rem;color:var(--muted);font-weight:800}

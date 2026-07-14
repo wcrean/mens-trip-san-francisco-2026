@@ -3,7 +3,7 @@
   "subtitle": "The San Francisco Playbook",
   "location": "San Francisco, California",
   "dates": "October 21\u201325, 2026",
-  "version": "5.0",
+  "version": "5.1",
   "phases": [
     {
       "label": "Location",
@@ -123,6 +123,11 @@
     "Has Roland found the legendary Men's Dinner yet?"
   ],
   "notes": [
+    {
+      "date": "July 2026",
+      "author": "Bill",
+      "text": "Replaced generic bar images with actual venue photos and changed voting to a live leaderboard."
+    },
     {
       "date": "July 2026",
       "author": "Bill",
@@ -495,10 +500,12 @@
         "category": "Sports",
         "walk": "About a 4-minute walk",
         "summary": "More than 20 screens, a huge beer list, and enough games to keep eight grown men occupied.",
-        "image": "https://images.pexels.com/photos/1267696/pexels-photo-1267696.jpeg?auto=compress&cs=tinysrgb&w=1200",
-        "imageAlt": "Lively bar with televisions and beer taps",
+        "image": "https://assets3.thrillist.com/v1/image/836373/1200x800/crop;webp=auto;jpeg_quality=80;progressive.jpg",
+        "imageAlt": "Pool table, televisions, seating, and bar inside Golden Gate Tap Room",
         "website": "https://www.ggtaproom.com/",
-        "maps": "https://www.google.com/maps/search/?api=1&query=Golden+Gate+Tap+Room+449+Powell+Street+San+Francisco"
+        "maps": "https://www.google.com/maps/search/?api=1&query=Golden+Gate+Tap+Room+449+Powell+Street+San+Francisco",
+        "imageCredit": "Golden Gate Tap Room photo via Thrillist",
+        "imageSource": "https://www.thrillist.com/drink/san-francisco/union-square/golden-gate-tap-room-a-bar-gaming-paradise-with-100-beers-potato-chip-nachos-and-pinup-girls"
       },
       {
         "id": "johnny-foleys",
@@ -506,10 +513,12 @@
         "category": "Irish",
         "walk": "About a 3-minute walk",
         "summary": "Guinness, Irish whiskey, honest pub food, and live entertainment. A strong first-night candidate.",
-        "image": "https://images.pexels.com/photos/274192/pexels-photo-274192.jpeg?auto=compress&cs=tinysrgb&w=1200",
-        "imageAlt": "Warm traditional pub interior with wooden bar",
+        "image": "https://cdn.vox-cdn.com/uploads/chorus_image/image/62587079/20191024_Johnny_Foleys_0160_8.20.jpeg",
+        "imageAlt": "Traditional wood interior, dining tables, barrels, and fireplace at Johnny Foley\u2019s",
         "website": "https://www.johnnyfoleys.com/",
-        "maps": "https://www.google.com/maps/search/?api=1&query=Johnny+Foley%27s+243+O%27Farrell+Street+San+Francisco"
+        "maps": "https://www.google.com/maps/search/?api=1&query=Johnny+Foley%27s+243+O%27Farrell+Street+San+Francisco",
+        "imageCredit": "Johnny Foley\u2019s interior via Eater/Vox",
+        "imageSource": "https://www.johnnyfoleys.com/"
       },
       {
         "id": "bartlett-hall",
@@ -517,10 +526,12 @@
         "category": "Brewpub",
         "walk": "About a 3-minute walk",
         "summary": "House-brewed beer, pub food, and communal tables a few steps from the hotel.",
-        "image": "https://images.pexels.com/photos/1552630/pexels-photo-1552630.jpeg?auto=compress&cs=tinysrgb&w=1200",
-        "imageAlt": "Craft brewery taproom with beer and communal seating",
+        "image": "https://resizer.otstatic.com/v4/photos/25144493-1?format=jpeg&height=800&width=1200",
+        "imageAlt": "Communal tables, bar seating, and modern saloon interior at Bartlett Hall",
         "website": "https://www.bartletthall.com/",
-        "maps": "https://www.google.com/maps/search/?api=1&query=Bartlett+Hall+242+O%27Farrell+Street+San+Francisco"
+        "maps": "https://www.google.com/maps/search/?api=1&query=Bartlett+Hall+242+O%27Farrell+Street+San+Francisco",
+        "imageCredit": "Bartlett Hall photo via OpenTable",
+        "imageSource": "https://www.opentable.com/r/bartlett-hall-san-francisco"
       }
     ],
     "bench": [
@@ -530,10 +541,12 @@
         "category": "Zero Effort",
         "walk": "Downstairs",
         "summary": "Cocktails, shareable plates, and absolutely no argument over whose turn it is to navigate.",
-        "image": "https://images.pexels.com/photos/941864/pexels-photo-941864.jpeg?auto=compress&cs=tinysrgb&w=1200",
-        "imageAlt": "Elegant hotel bar with cocktails",
+        "image": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/28/5b/25/0f/the-barnes-restaurant.jpg?h=700&s=1&w=1100",
+        "imageAlt": "Illuminated bar and seating inside The Barnes Restaurant and Bar",
         "website": "https://www.thebarnessf.com/dining/",
-        "maps": "https://www.google.com/maps/search/?api=1&query=The+Barnes+225+Powell+Street+San+Francisco"
+        "maps": "https://www.google.com/maps/search/?api=1&query=The+Barnes+225+Powell+Street+San+Francisco",
+        "imageCredit": "The Barnes Restaurant + Bar promotional photo",
+        "imageSource": "https://www.thebarnessf.com/dining/"
       },
       {
         "id": "local-edition",
@@ -541,10 +554,12 @@
         "category": "Cocktails + Music",
         "walk": "About a 10-minute walk",
         "summary": "A newspaper-themed underground cocktail bar with live music and plenty of room for walk-ins.",
-        "image": "https://images.pexels.com/photos/1269025/pexels-photo-1269025.jpeg?auto=compress&cs=tinysrgb&w=1200",
-        "imageAlt": "Moody cocktail bar with warm lighting",
+        "image": "https://img02.restaurantguru.com/c612-Local-Edition-design-3.jpg",
+        "imageAlt": "Stage, lounge seating, and cocktails at Local Edition",
         "website": "https://www.localeditionsf.com/",
-        "maps": "https://www.google.com/maps/search/?api=1&query=Local+Edition+691+Market+Street+San+Francisco"
+        "maps": "https://www.google.com/maps/search/?api=1&query=Local+Edition+691+Market+Street+San+Francisco",
+        "imageCredit": "Local Edition venue photo via Restaurant Guru",
+        "imageSource": "https://www.localeditionsf.com/"
       },
       {
         "id": "tempest",
@@ -552,13 +567,16 @@
         "category": "Dive",
         "walk": "About a 17-minute walk",
         "summary": "Unpretentious SoMa dive-bar energy, rotating taps, strong drinks, and comfort food.",
-        "image": "https://images.pexels.com/photos/5530170/pexels-photo-5530170.jpeg?auto=compress&cs=tinysrgb&w=1200",
-        "imageAlt": "Casual neighborhood dive bar interior",
+        "image": "https://s.hdnux.com/photos/01/33/07/46/23877220/3/1200x0.jpg",
+        "imageAlt": "Neon-lit brick interior and long bar at Tempest",
         "website": "https://tempest.pourguys.com/",
-        "maps": "https://www.google.com/maps/search/?api=1&query=Tempest+431+Natoma+Street+San+Francisco"
+        "maps": "https://www.google.com/maps/search/?api=1&query=Tempest+431+Natoma+Street+San+Francisco",
+        "imageCredit": "Tempest photo by Kevin Kelleher and Emily Trinh / SFGATE",
+        "imageSource": "https://www.sfgate.com/food/article/tempest-san-francisco-dive-bar-18094301.php"
       }
     ],
     "voteMode": "shared",
-    "voteNote": "Votes are shared live across everyone\u2019s phones. Each phone gets one current vote per bar. Five Pass votes move an option to the bench."
+    "voteNote": "Votes are shared live across everyone\u2019s phones. All options stay visible and automatically sort by group preference.",
+    "displayMode": "leaderboard"
   }
 }
