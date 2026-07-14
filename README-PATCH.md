@@ -1,13 +1,1 @@
-# Men's Trip Build 4.2 Patch
-
-Changed files only:
-- index.html
-- data/trip.json
-- sw.js
-
-Changes:
-- Adds Weather to the top navigation.
-- Keeps only three open questions:
-  1. Confirm Rob's tour dates.
-  2. Decide on accommodations.
-  3. Select the Men's Dinner location.
+Build 4.3 adds three walking-distance bar cards with photos and local I’m In / Pass voting. Two Pass votes on one phone rotate a card to a backup option. Votes are not shared across phones.

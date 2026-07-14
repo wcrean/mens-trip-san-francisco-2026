@@ -3,7 +3,7 @@
   "subtitle": "The San Francisco Playbook",
   "location": "San Francisco, California",
   "dates": "October 21\u201325, 2026",
-  "version": "4.2",
+  "version": "4.3",
   "phases": [
     {
       "label": "Location",
@@ -123,6 +123,11 @@
     "Has Roland found the legendary Men's Dinner yet?"
   ],
   "notes": [
+    {
+      "date": "July 2026",
+      "author": "Bill",
+      "text": "Added walkable bar options near The Barnes with simple I\u2019m In / Pass voting."
+    },
     {
       "date": "July 2026",
       "author": "Bill",
@@ -475,5 +480,78 @@
       "high": "\u2014",
       "rain": "\u2014"
     }
-  ]
+  ],
+  "walkableBars": {
+    "replacementThreshold": 2,
+    "initial": [
+      {
+        "id": "golden-gate-tap-room",
+        "name": "Golden Gate Tap Room",
+        "category": "Sports",
+        "walk": "About a 4-minute walk",
+        "summary": "More than 20 screens, a huge beer list, and enough games to keep eight grown men occupied.",
+        "image": "https://images.pexels.com/photos/1267696/pexels-photo-1267696.jpeg?auto=compress&cs=tinysrgb&w=1200",
+        "imageAlt": "Lively bar with televisions and beer taps",
+        "website": "https://www.ggtaproom.com/",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Golden+Gate+Tap+Room+449+Powell+Street+San+Francisco"
+      },
+      {
+        "id": "johnny-foleys",
+        "name": "Johnny Foley\u2019s",
+        "category": "Irish",
+        "walk": "About a 3-minute walk",
+        "summary": "Guinness, Irish whiskey, honest pub food, and live entertainment. A strong first-night candidate.",
+        "image": "https://images.pexels.com/photos/274192/pexels-photo-274192.jpeg?auto=compress&cs=tinysrgb&w=1200",
+        "imageAlt": "Warm traditional pub interior with wooden bar",
+        "website": "https://www.johnnyfoleys.com/",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Johnny+Foley%27s+243+O%27Farrell+Street+San+Francisco"
+      },
+      {
+        "id": "bartlett-hall",
+        "name": "Bartlett Hall",
+        "category": "Brewpub",
+        "walk": "About a 3-minute walk",
+        "summary": "House-brewed beer, pub food, and communal tables a few steps from the hotel.",
+        "image": "https://images.pexels.com/photos/1552630/pexels-photo-1552630.jpeg?auto=compress&cs=tinysrgb&w=1200",
+        "imageAlt": "Craft brewery taproom with beer and communal seating",
+        "website": "https://www.bartletthall.com/",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Bartlett+Hall+242+O%27Farrell+Street+San+Francisco"
+      }
+    ],
+    "bench": [
+      {
+        "id": "barnes-bar",
+        "name": "The Barnes Restaurant + Bar",
+        "category": "Zero Effort",
+        "walk": "Downstairs",
+        "summary": "Cocktails, shareable plates, and absolutely no argument over whose turn it is to navigate.",
+        "image": "https://images.pexels.com/photos/941864/pexels-photo-941864.jpeg?auto=compress&cs=tinysrgb&w=1200",
+        "imageAlt": "Elegant hotel bar with cocktails",
+        "website": "https://www.thebarnessf.com/dining/",
+        "maps": "https://www.google.com/maps/search/?api=1&query=The+Barnes+225+Powell+Street+San+Francisco"
+      },
+      {
+        "id": "local-edition",
+        "name": "Local Edition",
+        "category": "Cocktails + Music",
+        "walk": "About a 10-minute walk",
+        "summary": "A newspaper-themed underground cocktail bar with live music and plenty of room for walk-ins.",
+        "image": "https://images.pexels.com/photos/1269025/pexels-photo-1269025.jpeg?auto=compress&cs=tinysrgb&w=1200",
+        "imageAlt": "Moody cocktail bar with warm lighting",
+        "website": "https://www.localeditionsf.com/",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Local+Edition+691+Market+Street+San+Francisco"
+      },
+      {
+        "id": "tempest",
+        "name": "Tempest",
+        "category": "Dive",
+        "walk": "About a 17-minute walk",
+        "summary": "Unpretentious SoMa dive-bar energy, rotating taps, strong drinks, and comfort food.",
+        "image": "https://images.pexels.com/photos/5530170/pexels-photo-5530170.jpeg?auto=compress&cs=tinysrgb&w=1200",
+        "imageAlt": "Casual neighborhood dive bar interior",
+        "website": "https://tempest.pourguys.com/",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Tempest+431+Natoma+Street+San+Francisco"
+      }
+    ]
+  }
 }
