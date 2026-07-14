@@ -3,7 +3,7 @@
   "subtitle": "The San Francisco Playbook",
   "location": "San Francisco, California",
   "dates": "October 21\u201325, 2026",
-  "version": "4.3",
+  "version": "5.0",
   "phases": [
     {
       "label": "Location",
@@ -123,6 +123,11 @@
     "Has Roland found the legendary Men's Dinner yet?"
   ],
   "notes": [
+    {
+      "date": "July 2026",
+      "author": "Bill",
+      "text": "Connected bar voting to Firebase so the whole group sees the same live totals."
+    },
     {
       "date": "July 2026",
       "author": "Bill",
@@ -482,7 +487,7 @@
     }
   ],
   "walkableBars": {
-    "replacementThreshold": 2,
+    "replacementThreshold": 5,
     "initial": [
       {
         "id": "golden-gate-tap-room",
@@ -552,6 +557,8 @@
         "website": "https://tempest.pourguys.com/",
         "maps": "https://www.google.com/maps/search/?api=1&query=Tempest+431+Natoma+Street+San+Francisco"
       }
-    ]
+    ],
+    "voteMode": "shared",
+    "voteNote": "Votes are shared live across everyone\u2019s phones. Each phone gets one current vote per bar. Five Pass votes move an option to the bench."
   }
 }
