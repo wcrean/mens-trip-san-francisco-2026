@@ -3,7 +3,7 @@
   "subtitle": "The San Francisco Playbook",
   "location": "San Francisco, California",
   "dates": "October 21\u201325, 2026",
-  "version": "4.0",
+  "version": "4.1",
   "phases": [
     {
       "label": "Location",
@@ -443,5 +443,42 @@
         ]
       }
     ]
-  }
+  },
+  "weatherPlaceholder": [
+    {
+      "day": "Wednesday",
+      "date": "October 21",
+      "low": "\u2014",
+      "high": "\u2014",
+      "rain": "\u2014"
+    },
+    {
+      "day": "Thursday",
+      "date": "October 22",
+      "low": "\u2014",
+      "high": "\u2014",
+      "rain": "\u2014"
+    },
+    {
+      "day": "Friday",
+      "date": "October 23",
+      "low": "\u2014",
+      "high": "\u2014",
+      "rain": "\u2014"
+    },
+    {
+      "day": "Saturday",
+      "date": "October 24",
+      "low": "\u2014",
+      "high": "\u2014",
+      "rain": "\u2014"
+    },
+    {
+      "day": "Sunday",
+      "date": "October 25",
+      "low": "\u2014",
+      "high": "\u2014",
+      "rain": "\u2014"
+    }
+  ]
 }

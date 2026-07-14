@@ -7,7 +7,8 @@ const visuals=[
  {image:t.images.cablecar,kicker:"Booked",title:"Hop-on, hop-off",text:"Flexible sightseeing around San Francisco."}
 ];
 $("#visual-grid").innerHTML=visuals.map(v=>`<article class="visual-card"><img src="${v.image.url}" alt="${esc(v.image.alt)}" loading="lazy"><div class="visual-overlay"><p>${esc(v.kicker)}</p><h3>${esc(v.title)}</h3><span>${esc(v.text)}</span></div></article>`).join("");
-$("#photo-credit-list").innerHTML=t.photoCredits.map(i=>`<a class="photo-credit" href="${i.source}" target="_blank" rel="noopener"><strong>${esc(i.credit)}</strong><span>${esc(i.alt)}</span></a>`).join("");const p=Math.round(t.phases.filter(x=>x.status==="selected").length/t.phases.length*100);$("#progress-label").textContent=`${p}% locked`;$("#progress-bar").style.width=`${p}%`;const now=new Date();
+$("#photo-credit-list").innerHTML=t.photoCredits.map(i=>`<a class="photo-credit" href="${i.source}" target="_blank" rel="noopener"><strong>${esc(i.credit)}</strong><span>${esc(i.alt)}</span></a>`).join("");const p=Math.round(t.phases.filter(x=>x.status==="selected").length/t.phases.length*100);$("#progress-label").textContent=`${p}% locked`;$("#progress-bar").style.width=`${p}%`;$("#weather-placeholder-list").innerHTML=t.weatherPlaceholder.map(d=>`<div class="weather-row"><div><strong>${esc(d.day)}</strong><span>${esc(d.date)}</span></div><div>${esc(d.low)}</div><div>${esc(d.high)}</div><div>${esc(d.rain)}</div></div>`).join("");
+const now=new Date();
 const tz=t.rightNow.timeZone;
 const dateParts=new Intl.DateTimeFormat("en-CA",{timeZone:tz,year:"numeric",month:"2-digit",day:"2-digit"}).format(now);
 $("#sf-clock").textContent=new Intl.DateTimeFormat("en-US",{timeZone:tz,weekday:"short",month:"short",day:"numeric",hour:"numeric",minute:"2-digit"}).format(now);
