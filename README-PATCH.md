@@ -1,4 +1,4 @@
-# Men's Trip Build 3.5 Patch
+# Men's Trip Build 4 Patch
 
 Changed files only:
 - index.html
@@ -7,4 +7,6 @@ Changed files only:
 - css/styles.css
 - sw.js
 
-Adds a simple Trip Photos section with large View the Album and Add Photos buttons. The buttons remain disabled until Google Photos or Google Drive links are added.
+Adds a date-aware Right Now card near the top and renames the photo buttons to:
+- See Everyone's Pictures
+- Upload My Pictures

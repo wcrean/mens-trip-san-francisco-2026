@@ -3,7 +3,7 @@
   "subtitle": "The San Francisco Playbook",
   "location": "San Francisco, California",
   "dates": "October 21\u201325, 2026",
-  "version": "3.5",
+  "version": "4.0",
   "phases": [
     {
       "label": "Location",
@@ -338,15 +338,110 @@
   },
   "photoHub": {
     "title": "Trip Photos",
-    "summary": "One shared place for everyone\u2019s pictures. Open the album, add your photos, and you\u2019re done.",
-    "viewUrl": "",
-    "uploadUrl": "",
+    "summary": "One shared place for everyone\u2019s pictures. See the photos, add yours, and move on with your day.",
+    "viewUrl": "https://photos.app.goo.gl/45m4kTLohjyqhBZu9",
+    "uploadUrl": "https://photos.app.goo.gl/45m4kTLohjyqhBZu9",
     "storage": "Google Photos or Google Drive",
     "steps": [
-      "Tap \u201cView the Album\u201d to see everyone\u2019s pictures.",
-      "Tap \u201cAdd Photos\u201d to choose pictures from your phone.",
+      "Tap \u201cSee Everyone\u2019s Pictures\u201d to browse the shared album.",
+      "Tap \u201cUpload My Pictures\u201d to add photos from your phone.",
       "You may need to sign in to Google the first time."
     ],
-    "note": "Bill will add the final links after the shared album or folder is created."
+    "note": "The shared album is live. Tap either button to view or add photos."
+  },
+  "rightNow": {
+    "timeZone": "America/Los_Angeles",
+    "tripStart": "2026-10-21",
+    "tripEnd": "2026-10-25",
+    "preTrip": {
+      "title": "Next move",
+      "text": "Lock down the lodging, confirm Rob\u2019s tour dates, and keep Roland focused on the Men\u2019s Dinner."
+    },
+    "tripComplete": {
+      "title": "Mission accomplished",
+      "text": "The trip may be over, but the photo album and planning notes are still here."
+    },
+    "days": [
+      {
+        "date": "2026-10-21",
+        "label": "Wednesday, October 21",
+        "events": [
+          {
+            "time": "10:57",
+            "title": "Jason lands at SFO",
+            "detail": "He\u2019ll hold down the fort at the airport \u2014 likely with a cold beverage."
+          },
+          {
+            "time": "12:48",
+            "title": "Roland lands at SFO",
+            "detail": "Alaska Airlines 1403 from Portland."
+          },
+          {
+            "time": "13:10",
+            "title": "Bill and the Texas crew land",
+            "detail": "American Airlines 2387 from DFW. Main airport reunion."
+          },
+          {
+            "time": "15:30",
+            "title": "Avi lands at SFO",
+            "detail": "He\u2019ll meet the brotherhood at the hotel."
+          }
+        ]
+      },
+      {
+        "date": "2026-10-22",
+        "label": "Thursday, October 22",
+        "events": [
+          {
+            "time": "09:00",
+            "title": "San Francisco day",
+            "detail": "Activities are still being finalized."
+          },
+          {
+            "time": "19:00",
+            "title": "Evening plans",
+            "detail": "Restaurant or bar details to come."
+          }
+        ]
+      },
+      {
+        "date": "2026-10-23",
+        "label": "Friday, October 23",
+        "events": [
+          {
+            "time": "09:00",
+            "title": "Booked activity day",
+            "detail": "Rob\u2019s Alcatraz / Muir Woods / Sausalito tour may land here once the date is confirmed."
+          }
+        ]
+      },
+      {
+        "date": "2026-10-24",
+        "label": "Saturday, October 24",
+        "events": [
+          {
+            "time": "09:00",
+            "title": "San Francisco day",
+            "detail": "Hop-on, hop-off bus tour date still to be confirmed."
+          },
+          {
+            "time": "19:00",
+            "title": "Men\u2019s Dinner",
+            "detail": "Roland is on the clock."
+          }
+        ]
+      },
+      {
+        "date": "2026-10-25",
+        "label": "Sunday, October 25",
+        "events": [
+          {
+            "time": "09:00",
+            "title": "Departure day",
+            "detail": "Flight details and final meetup plans still to be added."
+          }
+        ]
+      }
+    ]
   }
 }

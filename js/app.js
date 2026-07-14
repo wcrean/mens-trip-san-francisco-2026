@@ -7,12 +7,31 @@ const visuals=[
  {image:t.images.cablecar,kicker:"Booked",title:"Hop-on, hop-off",text:"Flexible sightseeing around San Francisco."}
 ];
 $("#visual-grid").innerHTML=visuals.map(v=>`<article class="visual-card"><img src="${v.image.url}" alt="${esc(v.image.alt)}" loading="lazy"><div class="visual-overlay"><p>${esc(v.kicker)}</p><h3>${esc(v.title)}</h3><span>${esc(v.text)}</span></div></article>`).join("");
-$("#photo-credit-list").innerHTML=t.photoCredits.map(i=>`<a class="photo-credit" href="${i.source}" target="_blank" rel="noopener"><strong>${esc(i.credit)}</strong><span>${esc(i.alt)}</span></a>`).join("");const p=Math.round(t.phases.filter(x=>x.status==="selected").length/t.phases.length*100);$("#progress-label").textContent=`${p}% locked`;$("#progress-bar").style.width=`${p}%`;const photo=t.photoHub;
+$("#photo-credit-list").innerHTML=t.photoCredits.map(i=>`<a class="photo-credit" href="${i.source}" target="_blank" rel="noopener"><strong>${esc(i.credit)}</strong><span>${esc(i.alt)}</span></a>`).join("");const p=Math.round(t.phases.filter(x=>x.status==="selected").length/t.phases.length*100);$("#progress-label").textContent=`${p}% locked`;$("#progress-bar").style.width=`${p}%`;const now=new Date();
+const tz=t.rightNow.timeZone;
+const dateParts=new Intl.DateTimeFormat("en-CA",{timeZone:tz,year:"numeric",month:"2-digit",day:"2-digit"}).format(now);
+$("#sf-clock").textContent=new Intl.DateTimeFormat("en-US",{timeZone:tz,weekday:"short",month:"short",day:"numeric",hour:"numeric",minute:"2-digit"}).format(now);
+const today=t.rightNow.days.find(d=>d.date===dateParts);
+const tripStart=new Date(`${t.rightNow.tripStart}T12:00:00`);
+const tripEnd=new Date(`${t.rightNow.tripEnd}T23:59:59`);
+let rightNowHtml="";
+if(now<tripStart){
+  const days=Math.ceil((tripStart-now)/86400000);
+  rightNowHtml=`<span class="status status-current">Pre-trip</span><h3>${days} day${days===1?"":"s"} until San Francisco</h3><p><strong>${esc(t.rightNow.preTrip.title)}:</strong> ${esc(t.rightNow.preTrip.text)}</p>`;
+}else if(now>tripEnd){
+  rightNowHtml=`<span class="status status-selected">✓ Complete</span><h3>${esc(t.rightNow.tripComplete.title)}</h3><p>${esc(t.rightNow.tripComplete.text)}</p>`;
+}else if(today){
+  const currentMinutes=Number(new Intl.DateTimeFormat("en-US",{timeZone:tz,hour:"2-digit",minute:"2-digit",hour12:false}).format(now).replace(":",""));
+  const next=today.events.find(e=>Number(e.time.replace(":",""))>=currentMinutes)||today.events[today.events.length-1];
+  rightNowHtml=`<span class="status status-selected">✓ ${esc(today.label)}</span><h3>Next up: ${esc(next.title)}</h3><p>${esc(next.detail)}</p><div class="right-now-time">${esc(next.time)}</div>`;
+}
+$("#right-now-card").innerHTML=rightNowHtml;
+const photo=t.photoHub;
 const viewReady=Boolean(photo.viewUrl),uploadReady=Boolean(photo.uploadUrl);
 $("#photo-hub").innerHTML=`<div class="photo-intro"><div class="photo-symbol">📸</div><div><h3>${esc(photo.title)}</h3><p>${esc(photo.summary)}</p></div></div>
 <div class="photo-actions">
-<a class="photo-button ${viewReady?"":"disabled"}" ${viewReady?`href="${photo.viewUrl}" target="_blank" rel="noopener"`:'aria-disabled="true"'}><span>View the Album</span><small>${viewReady?"See everyone’s pictures":"Link coming soon"}</small></a>
-<a class="photo-button ${uploadReady?"":"disabled"}" ${uploadReady?`href="${photo.uploadUrl}" target="_blank" rel="noopener"`:'aria-disabled="true"'}><span>Add Photos</span><small>${uploadReady?"Choose pictures from your phone":"Link coming soon"}</small></a>
+<a class="photo-button ${viewReady?"":"disabled"}" ${viewReady?`href="${photo.viewUrl}" target="_blank" rel="noopener"`:'aria-disabled="true"'}><span>See Everyone’s Pictures</span><small>${viewReady?"Open the shared album":"Link coming soon"}</small></a>
+<a class="photo-button ${uploadReady?"":"disabled"}" ${uploadReady?`href="${photo.uploadUrl}" target="_blank" rel="noopener"`:'aria-disabled="true"'}><span>Upload My Pictures</span><small>${uploadReady?"Add pictures from your phone":"Link coming soon"}</small></a>
 </div>
 <ol class="photo-steps">${photo.steps.map(s=>`<li>${esc(s)}</li>`).join("")}</ol>
 <p class="photo-note">${esc(photo.note)}</p>`;$("#arrival-list").innerHTML=t.arrivals.map((a,i)=>`<article class="arrival-card"><div class="arrival-time">${esc(a.arrival)}</div><div><span class="status ${i<3?"status-selected":"status-current"}">${i<3?"✓ Confirmed":"Meet at hotel"}</span><h3>${esc(a.traveler)}</h3><p class="muted">${esc(a.origin)} → ${esc(a.airport)}</p><p><strong>${esc(a.airline)}</strong>${a.flight.includes("TBD")?"":` · ${esc(a.flight)}`}</p><p>${esc(a.meetup)}</p></div></article>`).join("");
