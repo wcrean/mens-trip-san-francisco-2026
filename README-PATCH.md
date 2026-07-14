@@ -1,9 +1,10 @@
-# Men's Trip Build 3.4 Patch
+# Men's Trip Build 3.5 Patch
 
 Changed files only:
+- index.html
+- data/trip.json
+- js/app.js
+- css/styles.css
+- sw.js
 
-- `index.html`
-- `data/trip.json`
-- `sw.js`
-
-Updates the tone to be more conversational and lightly funny for a close group of fraternity brothers, while keeping the app practical. Removes any unrelated GAC wording.
+Adds a simple Trip Photos section with large View the Album and Add Photos buttons. The buttons remain disabled until Google Photos or Google Drive links are added.

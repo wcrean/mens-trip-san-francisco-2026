@@ -3,7 +3,7 @@
   "subtitle": "The San Francisco Playbook",
   "location": "San Francisco, California",
   "dates": "October 21\u201325, 2026",
-  "version": "3.4",
+  "version": "3.5",
   "phases": [
     {
       "label": "Location",
@@ -131,6 +131,11 @@
     {
       "date": "July 2026",
       "author": "Bill",
+      "text": "Added a simple shared photo hub for viewing and uploading trip pictures."
+    },
+    {
+      "date": "July 2026",
+      "author": "Bill",
       "text": "Adjusted the app tone to sound more like the group: practical, brotherly, and lightly amused."
     },
     {
@@ -207,6 +212,12 @@
       "owner": "Group",
       "status": "Not started",
       "detail": "Research and reservations"
+    },
+    {
+      "task": "Shared photo album",
+      "owner": "Bill",
+      "status": "In progress",
+      "detail": "Create the Google Photos album or Google Drive folder and add the links"
     }
   ],
   "activities": [
@@ -324,5 +335,18 @@
   "arrivalSummary": {
     "title": "Airport game plan",
     "text": "Jason lands first and will hold down the fort at SFO, possibly with a cold beverage. Roland and Bill/Texas arrive only 22 minutes apart, setting up the main airport reunion. Avi rolls in later and will meet the brotherhood at the hotel."
+  },
+  "photoHub": {
+    "title": "Trip Photos",
+    "summary": "One shared place for everyone\u2019s pictures. Open the album, add your photos, and you\u2019re done.",
+    "viewUrl": "",
+    "uploadUrl": "",
+    "storage": "Google Photos or Google Drive",
+    "steps": [
+      "Tap \u201cView the Album\u201d to see everyone\u2019s pictures.",
+      "Tap \u201cAdd Photos\u201d to choose pictures from your phone.",
+      "You may need to sign in to Google the first time."
+    ],
+    "note": "Bill will add the final links after the shared album or folder is created."
   }
 }
