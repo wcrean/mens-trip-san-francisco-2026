@@ -1,10 +1,9 @@
-# Men's Trip San Francisco — Build 6.1 Photo Upgrade
+# Build 6.2 Patch
 
-Upload the contents of this patch to the repository root, preserving folders.
+This patch moves **🍻 First Round** above **Places to eat** and bumps the service-worker cache version so the new section order appears reliably.
 
-What changed:
-- Six selected bar photos are now stored locally as optimized 1200×800 WebP files.
-- Bar cards use a photo-first design with title/category overlays, icons, walking time, and group score.
-- The section is renamed “First Round.”
-- The service-worker cache is bumped to v6.1 and includes all six photos for offline use.
-- Shared Firebase voting remains unchanged.
+Upload the contents of this ZIP to the repository root, replacing the existing files.
+
+Commit message:
+
+`Move First Round above Places to Eat`
