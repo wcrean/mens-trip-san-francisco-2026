@@ -1,41 +1,105 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#17212b"><title>Men's Trip 2026</title><link rel="manifest" href="./manifest.json"><link rel="icon" href="./assets/icons/icon.svg" type="image/svg+xml"><link rel="stylesheet" href="./css/styles.css"></head><body>
-<header class="hero"><div class="shell hero-content"><p class="eyebrow">The San Francisco Playbook</p><h1 id="trip-name">Men's Trip 2026</h1><p id="trip-location">San Francisco</p><p id="trip-dates">October 21–25, 2026</p><a id="hero-credit" class="hero-credit" href="#" target="_blank" rel="noopener"></a><div class="hero-actions"><button id="install-button" hidden>Install App</button><button id="theme-toggle">Light mode</button></div></div></header>
-<nav class="nav"><div class="shell nav-inner"><a href="#right-now">Right Now</a><a href="#photos">Photos</a><a href="#arrivals">Arrivals</a><a href="#responsibilities">Responsibilities</a><a href="#progress">Progress</a><a href="#accommodations">Accommodations</a><a href="#comparison">Compare</a><a href="#activities">Activities</a><a href="#bars">Bars</a><a href="#weather">Weather</a><a href="#questions">Questions</a><a href="#notes">Notes</a></div></nav>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#17212b">
+  <title>Men's Trip 2026 · San Francisco</title>
+  <link rel="manifest" href="./manifest.json">
+  <link rel="icon" href="./assets/icons/icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./css/styles.css">
+</head>
+<body>
+<header class="hero">
+  <div class="shell hero-content">
+    <p class="eyebrow">The San Francisco Playbook</p>
+    <h1 id="trip-name">Men's Trip 2026</h1>
+    <p id="trip-location">San Francisco</p>
+    <p id="trip-dates">October 21–25, 2026</p>
+    <p id="tagline" class="hero-tagline"></p>
+    <a id="hero-credit" class="hero-credit" href="#" target="_blank" rel="noopener"></a>
+    <div class="hero-actions"><button id="install-button" hidden>Install App</button><button id="theme-toggle">Light mode</button></div>
+  </div>
+</header>
+
+<nav class="nav">
+  <div class="shell nav-inner">
+    <a href="#right-now">Right Now</a>
+    <a href="#reunion">Reunion</a>
+    <a href="#adventures">Adventures</a>
+    <a href="#neighborhood">Neighborhood</a>
+    <a href="#restaurants">Restaurants</a>
+    <a href="#bars">Bars</a>
+    <a href="#photos">Photos</a>
+    <a href="#weather">Weather</a>
+    <a href="#comparison">Stay</a>
+  </div>
+</nav>
+
 <main class="shell">
-<section id="right-now">
-<div class="heading"><div><p class="eyebrow">What matters now</p><h2>Right now</h2></div><div id="sf-clock" class="progress-label"></div></div>
-<div id="right-now-card" class="right-now-card"></div>
-</section>
-<section id="visuals"><div class="heading"><div><p class="eyebrow">Picture the trip</p><h2>San Francisco highlights</h2></div></div><div id="visual-grid" class="visual-grid"></div></section>
-<section id="photos">
-<div class="heading"><div><p class="eyebrow">One shared album</p><h2>Trip photos</h2></div></div>
-<div id="photo-hub" class="photo-hub"></div>
-</section>
-<section id="arrivals">
-<div class="heading"><div><p class="eyebrow">Wednesday reunion</p><h2>Who’s landing when?</h2></div></div>
-<div id="arrival-list" class="arrival-grid"></div>
-<div id="arrival-summary" class="arrival-summary"></div>
-</section>
-<section id="responsibilities">
-<div class="heading"><div><p class="eyebrow">Who has the ball</p><h2>Group responsibilities</h2></div></div>
-<div id="responsibility-list" class="responsibility-grid"></div>
-</section>
-<section id="progress"><div class="heading"><div><p class="eyebrow">Mission status</p><h2>What’s locked and what’s not</h2></div><div id="progress-label" class="progress-label"></div></div><div class="progress-track"><div id="progress-bar" class="progress-bar"></div></div><div id="phase-list" class="phase-grid"></div></section>
-<section id="accommodations"><div class="heading"><div><p class="eyebrow">Current mission</p><h2>Where are eight brothers sleeping?</h2></div></div><div id="accommodation-list" class="card-grid"></div></section>
-<section id="activities">
-<div class="heading"><div><p class="eyebrow">Booked so far</p><h2>Activities</h2></div></div>
-<div id="activity-list" class="card-grid"></div>
-</section>
-<section id="comparison"><div class="heading"><div><p class="eyebrow">Side by side</p><h2>Accommodation comparison</h2></div></div><div class="table-wrap"><table id="comparison-table"></table></div></section>
-<section><div id="recommendation-card" class="recommendation"></div></section>
-<section id="questions"><div class="heading"><div><p class="eyebrow">Still on the board</p><h2>Things we need to settle</h2></div></div><div class="panel"><ul id="question-list" class="check-list"></ul></div></section>
-<section id="bars"><div class="heading"><div><p class="eyebrow">Walking distance from The Barnes</p><h2>The bar leaderboard</h2></div></div><div id="bar-list" class="bar-grid"></div><p class="bar-vote-note">Connecting to shared voting…</p></section>
-<section id="weather">
-<div class="heading"><div><p class="eyebrow">A few days before departure</p><h2>Weather forecast</h2></div></div>
-<div class="weather-panel"><div class="weather-head"><span>Day</span><span>Low</span><span>High</span><span>Rain</span></div>
-<div id="weather-placeholder-list" class="weather-placeholder-list"></div>
-<p class="weather-note">We’ll fill this in when the San Francisco forecast is close enough to trust.</p></div>
-</section>
-<section id="photo-credits"><div class="heading"><div><p class="eyebrow">Photography</p><h2>Photo credits</h2></div></div><div id="photo-credit-list" class="photo-credit-list"></div></section>
-<section id="notes"><div class="heading"><div><p class="eyebrow">How we got here</p><h2>Trip notes</h2></div></div><div id="note-list" class="timeline"></div><div class="panel note-editor"><label for="private-note">Private note saved on this device</label><textarea id="private-note" rows="5"></textarea><button id="save-note">Save note</button><span id="save-status"></span></div></section>
-</main><footer><div class="shell"><p>Men's Trip 2026 · Build <span id="version"></span></p></div></footer><script type="module" src="./js/app.js"></script></body></html>
+  <section id="right-now">
+    <div class="heading"><div><p class="eyebrow">The trip at a glance</p><h2>Right now</h2></div><div id="sf-clock" class="progress-label"></div></div>
+    <div id="right-now-card" class="right-now-card"></div>
+  </section>
+
+  <section id="reunion">
+    <div class="heading"><div><p class="eyebrow">Wednesday, October 21</p><h2>The brotherhood reconvenes</h2></div></div>
+    <div class="experience-intro" id="reunion-intro"></div>
+    <div id="arrival-list" class="arrival-grid"></div>
+    <div id="arrival-summary" class="arrival-summary"></div>
+  </section>
+
+  <section id="adventures">
+    <div class="heading"><div><p class="eyebrow">Thursday and Friday</p><h2>Our San Francisco adventures</h2></div></div>
+    <div id="adventure-list" class="adventure-list"></div>
+    <div id="tour-highlight-list" class="visual-grid tour-highlight-grid"></div>
+  </section>
+
+  <section id="neighborhood">
+    <div class="heading"><div><p class="eyebrow">Our Union Square home base</p><h2>Step outside The Barnes</h2></div></div>
+    <div id="hotel-card" class="hotel-feature"></div>
+  </section>
+
+  <section id="restaurants">
+    <div class="heading"><div><p class="eyebrow">Near the hotel</p><h2>Places to eat</h2></div></div>
+    <p class="section-lede">A practical mix of breakfast, classic San Francisco, Italian, Thai, late-night food, and the easiest possible option downstairs.</p>
+    <div id="restaurant-list" class="restaurant-grid"></div>
+  </section>
+
+  <section id="bars">
+    <div class="heading"><div><p class="eyebrow">Walking distance from The Barnes</p><h2>Where should we raise a glass?</h2></div></div>
+    <p class="section-lede">Explore the nearby options, vote from your phone, and let the group favorites rise to the top.</p>
+    <div id="bar-list" class="bar-grid"></div>
+    <p class="bar-vote-note">Connecting to shared voting…</p>
+  </section>
+
+  <section id="photos">
+    <div class="heading"><div><p class="eyebrow">One shared album</p><h2>Trip photos</h2></div></div>
+    <div id="photo-hub" class="photo-hub"></div>
+  </section>
+
+  <section id="weather">
+    <div class="heading"><div><p class="eyebrow">A few days before departure</p><h2>Weather forecast</h2></div></div>
+    <div class="weather-panel">
+      <div class="weather-head"><span>Day</span><span>Low</span><span>High</span><span>Rain</span></div>
+      <div id="weather-placeholder-list" class="weather-placeholder-list"></div>
+      <p class="weather-note">We’ll fill this in when the San Francisco forecast is close enough to trust.</p>
+    </div>
+  </section>
+
+  <section id="comparison">
+    <div class="heading"><div><p class="eyebrow">For the record</p><h2>The hotel and the Airbnb alternatives</h2></div></div>
+    <p class="section-lede">The Barnes is our expected home base. We’re keeping the original comparison here for now.</p>
+    <div class="table-wrap"><table id="comparison-table"></table></div>
+  </section>
+
+  <section id="photo-credits">
+    <div class="heading"><div><p class="eyebrow">Photography</p><h2>Photo credits</h2></div></div>
+    <div id="photo-credit-list" class="photo-credit-list"></div>
+  </section>
+</main>
+
+<footer><div class="shell"><p>Men's Trip 2026 · Build <span id="version"></span></p></div></footer>
+<script type="module" src="./js/app.js"></script>
+</body>
+</html>

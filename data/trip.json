@@ -1,9 +1,9 @@
 {
   "name": "Men's Trip 2026",
-  "subtitle": "The San Francisco Playbook",
+  "subtitle": "Good friends. Great city. Stories in the making.",
   "location": "San Francisco, California",
   "dates": "October 21\u201325, 2026",
-  "version": "5.1",
+  "version": "6",
   "phases": [
     {
       "label": "Location",
@@ -41,7 +41,7 @@
       "name": "The Barnes San Francisco",
       "type": "Hotel",
       "neighborhood": "Union Square",
-      "status": "Reserved",
+      "status": "Our hotel",
       "total": 4246,
       "perPerson": 530,
       "sleeping": "Two junior suites with king bed + sofa bed, plus one room with two queen beds",
@@ -66,7 +66,7 @@
       "name": "Golden Gate Park 4BR Home",
       "type": "Airbnb",
       "neighborhood": "Near Golden Gate Park",
-      "status": "Under consideration",
+      "status": "Airbnb alternative",
       "total": 4500,
       "perPerson": 560,
       "sleeping": "Four bedrooms; some men would need bunk beds",
@@ -91,7 +91,7 @@
       "name": "The Surf Shack",
       "type": "Airbnb",
       "neighborhood": "Near the beach",
-      "status": "Premium option",
+      "status": "Airbnb alternative",
       "total": 6800,
       "perPerson": 850,
       "sleeping": "Six or more beds; exact assignment to confirm",
@@ -235,9 +235,9 @@
       "name": "Alcatraz with Muir Woods and Sausalito Tour",
       "status": "Booked",
       "owner": "Rob Baker",
-      "date": "TBD",
+      "date": "Friday, October 23",
       "duration": "Approximately 7\u20138 hours",
-      "summary": "Full-day combination tour featuring Alcatraz, Muir Woods, and Sausalito.",
+      "summary": "Friday\u2019s signature outing combining Alcatraz, Muir Woods, and Sausalito.",
       "website": "https://www.viator.com/tours/San-Francisco/Alcatraz-with-Muir-Woods-and-Sausalito-Tour/d651-152424P2?mcid=56757&dd_referrer=",
       "source": "Viator listing supplied by Bill"
     },
@@ -245,9 +245,9 @@
       "name": "San Francisco Hop-On, Hop-Off Bus Tour",
       "status": "Booked",
       "owner": "Rob Baker",
-      "date": "TBD",
-      "duration": "To be confirmed",
-      "summary": "Flexible sightseeing bus tour. Exact operator, ticket duration, and date still need to be added.",
+      "date": "Thursday, October 22",
+      "duration": "Full-day sightseeing at our own pace",
+      "summary": "Our Thursday introduction to San Francisco, with the freedom to hop off for neighborhoods, views, food, and landmarks.",
       "website": "",
       "source": "Family planning information"
     }
@@ -302,6 +302,12 @@
       "alt": "San Francisco cable car",
       "credit": "Jon Sullivan / Wikimedia Commons, public domain",
       "source": "https://commons.wikimedia.org/wiki/File:SF_Cable_Car.jpg"
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Sausalito%2C_California%2C_from_the_Bay.jpg?width=1400",
+      "alt": "Sausalito waterfront viewed from San Francisco Bay",
+      "credit": "Sausalito waterfront / Wikimedia Commons",
+      "source": "https://commons.wikimedia.org/wiki/File:Sausalito,_California,_from_the_Bay.jpg"
     }
   ],
   "arrivals": [
@@ -343,8 +349,8 @@
     }
   ],
   "arrivalSummary": {
-    "title": "Airport game plan",
-    "text": "Jason lands first and will hold down the fort at SFO, possibly with a cold beverage. Roland and Bill/Texas arrive only 22 minutes apart, setting up the main airport reunion. Avi rolls in later and will meet the brotherhood at the hotel."
+    "title": "Wednesday: everybody comes together",
+    "text": "Jason lands first and waits at SFO; Roland and Bill\u2019s group arrive only 22 minutes apart; Avi joins later at The Barnes. The trip really begins when the full crew is together at the hotel."
   },
   "photoHub": {
     "title": "Trip Photos",
@@ -578,5 +584,136 @@
     "voteMode": "shared",
     "voteNote": "Votes are shared live across everyone\u2019s phones. All options stay visible and automatically sort by group preference.",
     "displayMode": "leaderboard"
-  }
+  },
+  "taglines": [
+    "Eight brothers. One city. Countless stories.",
+    "Good friends. Good beer. Great stories.",
+    "San Francisco \u2014 the next chapter.",
+    "The brotherhood heads west.",
+    "Meet up. Look around. Raise a glass."
+  ],
+  "hotel": {
+    "name": "The Barnes San Francisco",
+    "address": "225 Powell Street, Union Square",
+    "summary": "Our home base in the middle of the city \u2014 a natural launch point for the reunion, sightseeing, restaurants, and nearby bars.",
+    "website": "https://www.thebarnessf.com/",
+    "maps": "https://www.google.com/maps/search/?api=1&query=The+Barnes+San+Francisco+225+Powell+Street",
+    "highlights": [
+      "Union Square location",
+      "Three rooms reserved for the group",
+      "Walkable bars and restaurants",
+      "Easy access to cable cars and city sightseeing"
+    ]
+  },
+  "reunion": {
+    "title": "The brotherhood reconvenes",
+    "summary": "Wednesday is about getting everybody into town, gathering at SFO and The Barnes, and easing into San Francisco together.",
+    "closing": "By late afternoon, everyone should be together at the hotel and ready for the first drink, dinner, and stories."
+  },
+  "adventures": [
+    {
+      "day": "Thursday",
+      "date": "October 22",
+      "title": "See the city from the top deck",
+      "name": "Hop-On, Hop-Off San Francisco",
+      "summary": "Our first full day is a flexible ride through San Francisco\u2019s landmarks and neighborhoods. We can take in the big views, jump off where the group wants, and use the bus as our introduction to the city.",
+      "image": "https://commons.wikimedia.org/wiki/Special:FilePath/SF_Cable_Car.jpg?width=1400",
+      "imageAlt": "San Francisco cable car and city sightseeing scene",
+      "website": "https://www.bigbustours.com/en/san-francisco/san-francisco-routes-and-tour-maps",
+      "button": "Explore the route",
+      "moments": [
+        "Golden Gate Bridge",
+        "Fisherman\u2019s Wharf",
+        "Chinatown",
+        "Lombard Street"
+      ]
+    },
+    {
+      "day": "Friday",
+      "date": "October 23",
+      "title": "The big Bay Area day",
+      "name": "Alcatraz, Muir Woods & Sausalito",
+      "summary": "Rob has lined up the signature day of the trip: the history of Alcatraz, a walk among the redwoods, and time along the Sausalito waterfront \u2014 all in one memorable outing.",
+      "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Alcatraz_Island_aerial_view.jpg?width=1400",
+      "imageAlt": "Aerial view of Alcatraz Island",
+      "website": "https://www.viator.com/tours/San-Francisco/Alcatraz-with-Muir-Woods-and-Sausalito-Tour/d651-152424P2",
+      "button": "See the tour",
+      "moments": [
+        "Alcatraz Island",
+        "Muir Woods redwoods",
+        "Golden Gate views",
+        "Sausalito waterfront"
+      ]
+    }
+  ],
+  "tourHighlights": [
+    {
+      "name": "Alcatraz",
+      "text": "A ferry across the Bay and a close look at one of America\u2019s most famous historic sites.",
+      "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Alcatraz_Island_aerial_view.jpg?width=1400",
+      "alt": "Aerial view of Alcatraz Island"
+    },
+    {
+      "name": "Muir Woods",
+      "text": "A change of pace beneath towering coastal redwoods just beyond the city.",
+      "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Looking_Up_at_Redwoods_%2818216711785%29.jpg?width=1400",
+      "alt": "Looking up at redwoods in Muir Woods"
+    },
+    {
+      "name": "Sausalito",
+      "text": "Waterfront views, shops, food, and a relaxed finish on the north side of the Bay.",
+      "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Sausalito%2C_California%2C_from_the_Bay.jpg?width=1400",
+      "alt": "Sausalito waterfront viewed from San Francisco Bay"
+    }
+  ],
+  "restaurants": [
+    {
+      "name": "John\u2019s Grill",
+      "category": "Classic San Francisco",
+      "walk": "About a 3-minute walk",
+      "summary": "An old-school downtown dining room known for steaks, seafood, cocktails, and its Maltese Falcon history.",
+      "website": "https://www.johnsgrill.com/",
+      "maps": "https://www.google.com/maps/search/?api=1&query=John%27s+Grill+San+Francisco"
+    },
+    {
+      "name": "Sears Fine Food",
+      "category": "Breakfast",
+      "walk": "About a 2-minute walk",
+      "summary": "A Union Square institution and an easy group breakfast option, especially for pancakes and classic morning fare.",
+      "website": "https://www.searsfinefood.com/",
+      "maps": "https://www.google.com/maps/search/?api=1&query=Sears+Fine+Food+San+Francisco"
+    },
+    {
+      "name": "Fino Bar & Ristorante",
+      "category": "Italian",
+      "walk": "About a 7-minute walk",
+      "summary": "A comfortable neighborhood-style Italian choice for pasta, seafood, wine, and an unhurried group dinner.",
+      "website": "https://www.finosf.com/",
+      "maps": "https://www.google.com/maps/search/?api=1&query=Fino+Bar+Ristorante+San+Francisco"
+    },
+    {
+      "name": "Kin Khao",
+      "category": "Thai",
+      "walk": "About a 4-minute walk",
+      "summary": "A lively nearby option for bold Thai food when the group wants something more distinctive than standard hotel-district fare.",
+      "website": "https://www.kinkhao.com/",
+      "maps": "https://www.google.com/maps/search/?api=1&query=Kin+Khao+San+Francisco"
+    },
+    {
+      "name": "Pinecrest Diner",
+      "category": "Late night",
+      "walk": "About a 5-minute walk",
+      "summary": "A straightforward diner close to the hotel for breakfast, burgers, or the moment somebody decides he still needs food.",
+      "website": "https://www.pinecrestdiner.com/",
+      "maps": "https://www.google.com/maps/search/?api=1&query=Pinecrest+Diner+San+Francisco"
+    },
+    {
+      "name": "The Barnes Restaurant + Bar",
+      "category": "At the hotel",
+      "walk": "Elevator distance",
+      "summary": "The easy fallback for cocktails, shareable appetizers, or a meal when nobody feels like organizing another movement.",
+      "website": "https://www.thebarnessf.com/dining/",
+      "maps": "https://www.google.com/maps/search/?api=1&query=The+Barnes+Restaurant+Bar+San+Francisco"
+    }
+  ]
 }
