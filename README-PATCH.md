@@ -1,9 +1,10 @@
-# Men's Trip Build 5.1 Patch
+# Men's Trip San Francisco — Build 6.1 Photo Upgrade
 
-Changes:
-- Replaces generic bar images with actual venue photography.
-- Adds visible photo credits.
-- Keeps every bar visible.
-- Sorts bars live by group score: I'm In votes minus Pass votes.
-- Shows each bar's live rank and score.
-- Preserves one current vote per phone per bar through Firebase.
+Upload the contents of this patch to the repository root, preserving folders.
+
+What changed:
+- Six selected bar photos are now stored locally as optimized 1200×800 WebP files.
+- Bar cards use a photo-first design with title/category overlays, icons, walking time, and group score.
+- The section is renamed “First Round.”
+- The service-worker cache is bumped to v6.1 and includes all six photos for offline use.
+- Shared Firebase voting remains unchanged.

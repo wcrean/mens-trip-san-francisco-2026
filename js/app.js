@@ -96,14 +96,16 @@ async function init(){
       const mine=sharedVotes.mine[b.id]||null;
       const score=votes.up-votes.down;
       return `<article class="bar-card">
-        <div class="bar-photo-wrap"><img src="${b.image}" alt="${esc(b.imageAlt)}" loading="lazy">
+        <div class="bar-photo-wrap">
+          <img src="${b.image}" alt="${esc(b.imageAlt)}" loading="lazy">
+          <div class="bar-photo-shade"></div>
           <span class="bar-rank">#${index+1}</span>
-          <a class="bar-photo-credit" href="${b.imageSource}" target="_blank" rel="noopener">${esc(b.imageCredit)}</a>
+          <div class="bar-photo-title"><span class="bar-type-icon" aria-hidden="true">${esc(b.icon||"🍻")}</span><div><span>${esc(b.category)}</span><h3>${esc(b.name)}</h3></div></div>
+          <a class="bar-photo-credit" href="${b.imageSource}" target="_blank" rel="noopener">Photo source</a>
         </div>
         <div class="bar-card-body">
-          <div class="bar-topline"><span class="status status-current">${esc(b.category)}</span><span class="bar-walk">${esc(b.walk)}</span></div>
-          <h3>${esc(b.name)}</h3><p>${esc(b.summary)}</p>
-          <div class="bar-score"><strong>${score>0?"+":""}${score}</strong><span>group score</span></div>
+          <div class="bar-meta-row"><span class="bar-walk">📍 ${esc(b.walk)}</span><div class="bar-score"><strong>${score>0?"+":""}${score}</strong><span>group score</span></div></div>
+          <p>${esc(b.summary)}</p>
           <div class="bar-links"><a class="pill" href="${b.website}" target="_blank" rel="noopener">Website</a><a class="pill" href="${b.maps}" target="_blank" rel="noopener">Map</a></div>
           <div class="vote-row">
             <button class="vote-button vote-up ${mine==="up"?"selected":""}" data-bar="${b.id}" data-vote="up" ${voteConnectionState!=="Live"?"disabled":""}>👍 I’m In <span>${votes.up}</span></button>
