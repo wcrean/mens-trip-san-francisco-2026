@@ -26,6 +26,11 @@ async function init(){
   const tz=t.rightNow.timeZone;
   $("#sf-clock").textContent=new Intl.DateTimeFormat("en-US",{timeZone:tz,weekday:"short",month:"short",day:"numeric",hour:"numeric",minute:"2-digit"}).format(now);
   const dateParts=new Intl.DateTimeFormat("en-CA",{timeZone:tz,year:"numeric",month:"2-digit",day:"2-digit"}).format(now);
+  const reunionCutoff="2026-10-21";
+  if(dateParts>reunionCutoff){
+    document.querySelector("#reunion")?.remove();
+    document.querySelector("#reunion-nav")?.remove();
+  }
   const today=t.rightNow.days.find(d=>d.date===dateParts);
   const tripStart=new Date(`${t.rightNow.tripStart}T12:00:00`);
   const tripEnd=new Date(`${t.rightNow.tripEnd}T23:59:59`);
@@ -42,6 +47,7 @@ async function init(){
   }
   $("#right-now-card").innerHTML=rightNowHtml;
 
+  if($("#reunion")){
   $("#reunion-intro").innerHTML=`<div><p class="eyebrow">The opening scene</p><h3>${esc(t.reunion.title)}</h3><p>${esc(t.reunion.summary)}</p></div><div class="big-date">WED<br><strong>21</strong></div>`;
   $("#arrival-list").innerHTML=t.arrivals.map((a,i)=>`<article class="arrival-card">
     <div class="arrival-time">${esc(a.arrival)}</div>
@@ -50,6 +56,7 @@ async function init(){
     <p><strong>${esc(a.airline)}</strong>${a.flight.includes("TBD")?"":` · ${esc(a.flight)}`}</p><p>${esc(a.meetup)}</p></div>
   </article>`).join("");
   $("#arrival-summary").innerHTML=`<p class="eyebrow">The plan</p><h3>${esc(t.arrivalSummary.title)}</h3><p>${esc(t.arrivalSummary.text)}</p>`;
+  }
 
   $("#adventure-list").innerHTML=t.adventures.map(a=>`<article class="adventure-card">
     <img src="${a.image}" alt="${esc(a.imageAlt)}" loading="lazy">

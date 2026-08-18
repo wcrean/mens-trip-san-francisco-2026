@@ -1,9 +1,9 @@
-# Build 6.2 Patch
+# Build 7.0
 
-This patch moves **🍻 First Round** above **Places to eat** and bumps the service-worker cache version so the new section order appears reliably.
+Integrated Men’s Trip Trivia v1.3.0 into the main San Francisco app.
 
-Upload the contents of this ZIP to the repository root, replacing the existing files.
-
-Commit message:
-
-`Move First Round above Places to Eat`
+Changes:
+- Added a Men’s Trip Trivia card after Reunion and before Adventures.
+- Trivia remains self-contained under `/trivia/` and keeps its separate Firebase project.
+- Reunion automatically disappears after Wednesday, October 21, 2026 using the San Francisco local date.
+- Bumped the main app service-worker cache to v7.0.

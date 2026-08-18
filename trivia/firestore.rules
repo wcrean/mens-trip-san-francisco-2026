@@ -1,0 +1,56 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function signedIn() {
+      return request.auth != null;
+    }
+
+    function roomExists(roomCode) {
+      return exists(/databases/$(database)/documents/rooms/$(roomCode));
+    }
+
+    function room(roomCode) {
+      return get(/databases/$(database)/documents/rooms/$(roomCode)).data;
+    }
+
+    function isHost(roomCode) {
+      return signedIn() && room(roomCode).hostId == request.auth.uid;
+    }
+
+    match /rooms/{roomCode} {
+      allow create: if signedIn()
+        && request.resource.data.hostId == request.auth.uid
+        && request.resource.data.status == "lobby";
+
+      allow read: if signedIn();
+
+      allow update, delete: if isHost(roomCode);
+
+      match /players/{playerId} {
+        allow read: if signedIn() && roomExists(roomCode);
+
+        allow create: if signedIn()
+          && request.auth.uid == playerId
+          && roomExists(roomCode);
+
+        allow update: if signedIn() && (
+          request.auth.uid == playerId ||
+          isHost(roomCode)
+        );
+
+        allow delete: if isHost(roomCode);
+      }
+
+      match /rounds/{roundId}/answers/{playerId} {
+        allow read: if signedIn() && roomExists(roomCode);
+
+        allow create, update: if signedIn()
+          && request.auth.uid == playerId
+          && roomExists(roomCode);
+
+        allow delete: if isHost(roomCode);
+      }
+    }
+  }
+}
