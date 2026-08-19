@@ -55,7 +55,6 @@ async function init(){
     <h3>${esc(a.traveler)}</h3><p class="muted">${esc(a.origin)} → ${esc(a.airport)}</p>
     <p><strong>${esc(a.airline)}</strong>${a.flight.includes("TBD")?"":` · ${esc(a.flight)}`}</p><p>${esc(a.meetup)}</p></div>
   </article>`).join("");
-  $("#arrival-summary").innerHTML=`<p class="eyebrow">The plan</p><h3>${esc(t.arrivalSummary.title)}</h3><p>${esc(t.arrivalSummary.text)}</p>`;
   }
 
   $("#adventure-list").innerHTML=t.adventures.map(a=>`<article class="adventure-card">
