@@ -1,15 +1,11 @@
-# Build 7.1
+# Build 7.1.1
 
-Updates the embedded Men's Trip Trivia game from v1.3.0 to v1.4.0.
+Small navigation and copy update to the integrated Men’s Trip Trivia experience.
 
-Trivia updates included:
-- Blank/neutral room-code entry field.
-- Leave Game control for every player.
-- Claim Host recovery control with confirmation.
-- Latest v1.3.1 reveal-screen presentation: notes hidden; question shown above Correct Answer.
-- Existing five-question format, alpha-only room codes, reaction images, standings flow, and End Game control retained.
+Changes:
+- Added a persistent “← Back to Men’s Trip” link in the Trivia header so players can return to the main San Francisco app from any Trivia screen.
+- Simplified the main app Trivia card copy to “Test your Men’s Trip knowledge.”
+- Removed the redundant create-room / room-code instructions from the main app card; those instructions remain on the Trivia landing page.
+- Bumped the main app service-worker cache to v7.1.1.
 
-The main San Francisco app structure and content are otherwise unchanged.
-The main app service-worker cache is bumped to v7.1.
-
-Important: Trivia v1.4.0 uses the updated Firestore rules that must be published in the separate Men's Trip Trivia Firebase project.
+Trivia game logic, Firebase configuration/rules, five-question format, scoring, reactions, host recovery, and standings flow are unchanged from Trivia v1.4.0.
