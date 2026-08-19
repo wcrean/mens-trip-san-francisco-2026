@@ -37,7 +37,7 @@ async function init(){
   let rightNowHtml="";
   if(now<tripStart){
     const days=Math.ceil((tripStart-now)/86400000);
-    rightNowHtml=`<span class="status status-current">Coming up</span><h3>${days} day${days===1?"":"s"} until San Francisco</h3><p>First up: everybody makes his way to SFO and The Barnes on Wednesday, October 21.</p><div class="right-now-preview"><span>Thu 10/22 · Hop-On, Hop-Off</span><span>Fri 10/23 · Alcatraz, Muir Woods & Sausalito</span></div>`;
+    rightNowHtml=`<span class="status status-current">Coming up</span><h3>${days} day${days===1?"":"s"} until San Francisco</h3>`;
   }else if(now>tripEnd){
     rightNowHtml=`<span class="status status-selected">✓ Trip complete</span><h3>${esc(t.rightNow.tripComplete.title)}</h3><p>${esc(t.rightNow.tripComplete.text)}</p>`;
   }else if(today){

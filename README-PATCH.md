@@ -1,9 +1,9 @@
-# Build 7.1.2
+# Build 7.1.3
 
-Reunion presentation cleanup.
+Right Now card cleanup.
 
 Changes:
-- Kept the Opening Scene card.
-- Replaced the generalized Brotherhood Reconvenes summary with the specific arrival narrative previously shown in The Plan card.
-- Removed the now-redundant The Plan card.
-- Bumped the main app service-worker cache to v7.1.2.
+- Before the trip, the Coming Up card now shows only the number of days until San Francisco.
+- Removed the duplicate itinerary preview/details from that card.
+- Focused trip cards below remain unchanged.
+- Bumped the service-worker cache to v7.1.3.
