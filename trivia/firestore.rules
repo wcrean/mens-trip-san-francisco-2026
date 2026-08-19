@@ -18,6 +18,17 @@ service cloud.firestore {
       return signedIn() && room(roomCode).hostId == request.auth.uid;
     }
 
+    function isPlayer(roomCode) {
+      return signedIn()
+        && exists(/databases/$(database)/documents/rooms/$(roomCode)/players/$(request.auth.uid));
+    }
+
+    function isHostClaim(roomCode) {
+      return isPlayer(roomCode)
+        && request.resource.data.diff(resource.data).affectedKeys().hasOnly(["hostId", "updatedAt"])
+        && request.resource.data.hostId == request.auth.uid;
+    }
+
     match /rooms/{roomCode} {
       allow create: if signedIn()
         && request.resource.data.hostId == request.auth.uid
@@ -25,7 +36,8 @@ service cloud.firestore {
 
       allow read: if signedIn();
 
-      allow update, delete: if isHost(roomCode);
+      allow update: if isHost(roomCode) || isHostClaim(roomCode);
+      allow delete: if isHost(roomCode);
 
       match /players/{playerId} {
         allow read: if signedIn() && roomExists(roomCode);
@@ -39,7 +51,10 @@ service cloud.firestore {
           isHost(roomCode)
         );
 
-        allow delete: if isHost(roomCode);
+        allow delete: if signedIn() && (
+          request.auth.uid == playerId ||
+          isHost(roomCode)
+        );
       }
 
       match /rounds/{roundId}/answers/{playerId} {

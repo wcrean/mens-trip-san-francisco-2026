@@ -14,6 +14,8 @@ import {
   nextRound,
   resetGame,
   endGame,
+  leaveGame,
+  claimHost,
   deleteRoom
 } from "./firebase-service.js";
 
@@ -60,6 +62,12 @@ function showScreen(name) {
   Object.entries(screens).forEach(([key, element]) => {
     element.classList.toggle("active", key === name);
   });
+}
+
+function renderRoomControls() {
+  const inRoom = Boolean(state.roomCode && state.room);
+  $("#leave-room-button").classList.toggle("hidden", !inRoom);
+  $("#claim-host-button").classList.toggle("hidden", !inRoom || state.isHost);
 }
 
 function setError(message, technical = "") {
@@ -117,6 +125,7 @@ function leaveRoom() {
   state.selectedChoice = null;
   localStorage.removeItem("mensTripTriviaRoom");
   $("#room-label").textContent = "";
+  renderRoomControls();
   showScreen("home");
 }
 
@@ -135,6 +144,8 @@ function subscribe(code) {
     state.room = room;
     state.isHost = room.hostId === getCurrentUser().uid;
     $("#room-label").textContent = `Room ${code}`;
+    renderRoomControls();
+    renderPlayers();
     routeRoom();
   }, error => setError(friendlyError(error), error?.message));
 
@@ -172,7 +183,7 @@ function routeRoom() {
 function renderPlayers() {
   const html = state.players.map(player => `
     <div class="player-row">
-      <span>${escapeHtml(player.name)}${player.isHost ? " 👑" : ""}</span>
+      <span>${escapeHtml(player.name)}${player.id === state.room?.hostId ? " 👑" : ""}</span>
       <strong>${player.score ?? 0}</strong>
     </div>
   `).join("");
@@ -232,8 +243,8 @@ function renderReveal() {
   if (!question) return;
 
   renderReactionImage(question);
+  $("#reveal-question").textContent = question.stem;
   $("#reveal-answer").textContent = question.choices[question.correctIndex];
-  $("#reveal-note").textContent = question.note;
   $("#host-reveal-controls").classList.toggle("hidden", !state.isHost);
   renderRevealVotes();
   renderRightWrong(question);
@@ -362,7 +373,35 @@ $("#show-join-button").addEventListener("click", () => {
 });
 $("#back-home-button").addEventListener("click", () => showScreen("home"));
 $("#retry-button").addEventListener("click", () => location.reload());
-$("#leave-game-button").addEventListener("click", leaveRoom);
+
+$("#leave-room-button").addEventListener("click", async () => {
+  if (!state.roomCode) return;
+  const message = state.isHost
+    ? "Leave this game? Another player can claim host and continue."
+    : "Leave this game and return to the start screen?";
+  if (!window.confirm(message)) return;
+
+  try {
+    await leaveGame(state.roomCode);
+    leaveRoom();
+  } catch (error) {
+    setError(friendlyError(error), error?.message);
+  }
+});
+
+$("#claim-host-button").addEventListener("click", async () => {
+  if (!state.roomCode || state.isHost) return;
+  const confirmed = window.confirm(
+    "Take over as host for this room? Use this if the current host can no longer control the game."
+  );
+  if (!confirmed) return;
+
+  try {
+    await claimHost(state.roomCode);
+  } catch (error) {
+    setError(friendlyError(error), error?.message);
+  }
+});
 
 $("#create-form").addEventListener("submit", async event => {
   event.preventDefault();

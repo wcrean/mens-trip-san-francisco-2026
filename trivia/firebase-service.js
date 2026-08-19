@@ -204,6 +204,25 @@ export async function resetGame(code) {
   await batch.commit();
 }
 
+export async function leaveGame(code) {
+  const user = getCurrentUser();
+  await deleteDoc(doc(db, "rooms", code, "players", user.uid));
+}
+
+export async function claimHost(code) {
+  const user = getCurrentUser();
+  const playerRef = doc(db, "rooms", code, "players", user.uid);
+  const playerSnap = await getDoc(playerRef);
+  if (!playerSnap.exists()) {
+    throw new Error("You must be a player in this room to claim host.");
+  }
+
+  await updateDoc(doc(db, "rooms", code), {
+    hostId: user.uid,
+    updatedAt: serverTimestamp()
+  });
+}
+
 export async function deleteRoom(code) {
   const playersSnap = await getDocs(collection(db, "rooms", code, "players"));
   const batch = writeBatch(db);

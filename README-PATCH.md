@@ -1,9 +1,15 @@
-# Build 7.0
+# Build 7.1
 
-Integrated Men’s Trip Trivia v1.3.0 into the main San Francisco app.
+Updates the embedded Men's Trip Trivia game from v1.3.0 to v1.4.0.
 
-Changes:
-- Added a Men’s Trip Trivia card after Reunion and before Adventures.
-- Trivia remains self-contained under `/trivia/` and keeps its separate Firebase project.
-- Reunion automatically disappears after Wednesday, October 21, 2026 using the San Francisco local date.
-- Bumped the main app service-worker cache to v7.0.
+Trivia updates included:
+- Blank/neutral room-code entry field.
+- Leave Game control for every player.
+- Claim Host recovery control with confirmation.
+- Latest v1.3.1 reveal-screen presentation: notes hidden; question shown above Correct Answer.
+- Existing five-question format, alpha-only room codes, reaction images, standings flow, and End Game control retained.
+
+The main San Francisco app structure and content are otherwise unchanged.
+The main app service-worker cache is bumped to v7.1.
+
+Important: Trivia v1.4.0 uses the updated Firestore rules that must be published in the separate Men's Trip Trivia Firebase project.

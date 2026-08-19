@@ -18,7 +18,11 @@
         <p class="brand-kicker">MEN’S TRIP TRIVIA</p>
         <h1>How well do you know the trip?</h1>
       </div>
-      <span id="room-label" class="room-label"></span>
+      <div class="room-tools">
+        <span id="room-label" class="room-label"></span>
+        <button id="claim-host-button" class="small-button hidden" type="button">Claim Host</button>
+        <button id="leave-room-button" class="text-button hidden" type="button">Leave Game</button>
+      </div>
     </header>
 
     <section id="screen-loading" class="screen active">
@@ -46,7 +50,7 @@
         <label for="join-name">Nickname</label>
         <input id="join-name" maxlength="20" autocomplete="nickname" required placeholder="Bill">
         <label for="join-code">Room code</label>
-        <input id="join-code" maxlength="5" minlength="5" autocapitalize="characters" autocomplete="off" spellcheck="false" pattern="[A-Za-z]{5}" title="Enter the 5-letter room code" required placeholder="JAMES">
+        <input id="join-code" maxlength="5" minlength="5" autocapitalize="characters" autocomplete="off" spellcheck="false" pattern="[A-Za-z]{5}" title="Enter the 5-letter room code" required>
         <button class="primary-button" type="submit">Join</button>
         <p id="home-error" class="error-text"></p>
       </form>
@@ -113,9 +117,10 @@
         <img id="reaction-image" alt="Men’s Trip answer reaction">
       </div>
       <div class="answer-card">
-        <p class="eyebrow">CORRECT ANSWER</p>
+        <p class="eyebrow">QUESTION</p>
+        <h2 id="reveal-question"></h2>
+        <p class="eyebrow reveal-answer-label">CORRECT ANSWER</p>
         <h2 id="reveal-answer"></h2>
-        <p id="reveal-note" class="muted"></p>
       </div>
 
       <div class="panel">
@@ -163,7 +168,6 @@
         <button id="play-again-button" class="primary-button">Play Again</button>
         <button id="finish-room-button" class="danger-button">End Room</button>
       </div>
-      <button id="leave-game-button" class="secondary-button">Leave Game</button>
     </section>
 
     <section id="screen-error" class="screen">
