@@ -11,7 +11,8 @@ async function loadTrip(){
 }
 
 
-const WEATHER_URL = "https://api.open-meteo.com/v1/forecast?latitude=37.7749&longitude=-122.4194&current=temperature_2m,apparent_temperature,weather_code,wind_speed_10m&daily=weather_code,temperature_2m_max,temperature_2m_min,precipitation_probability_max&temperature_unit=fahrenheit&wind_speed_unit=mph&timezone=America%2FLos_Angeles&forecast_days=16";
+
+const WEATHER_URL = "https://api.open-meteo.com/v1/forecast?latitude=37.7749&longitude=-122.4194&current=temperature_2m,apparent_temperature,weather_code,wind_speed_10m&daily=weather_code,temperature_2m_max,temperature_2m_min,precipitation_probability_max&temperature_unit=fahrenheit&wind_speed_unit=mph&timezone=America%2FLos_Angeles&forecast_days=10";
 
 function weatherLabel(code){
   if(code===0) return ["☀️","Clear"];
@@ -28,50 +29,43 @@ function weatherLabel(code){
   return ["🌡️","Conditions"];
 }
 
-function renderTripWeatherRows(t, daily=null){
-  const byDate=new Map();
-  if(daily?.time){
-    daily.time.forEach((date,i)=>{
-      byDate.set(date,{
-        low:daily.temperature_2m_min?.[i],
-        high:daily.temperature_2m_max?.[i],
-        rain:daily.precipitation_probability_max?.[i],
-        code:daily.weather_code?.[i]
-      });
-    });
-  }
+function formatForecastDate(iso,i){
+  const d=new Date(`${iso}T12:00:00`);
+  const day=new Intl.DateTimeFormat("en-US",{timeZone:"America/Los_Angeles",weekday:"short"}).format(d);
+  const date=new Intl.DateTimeFormat("en-US",{timeZone:"America/Los_Angeles",month:"short",day:"numeric"}).format(d);
+  return {
+    day:i===0?`Today · ${day}`:day,
+    date
+  };
+}
 
-  $("#weather-placeholder-list").innerHTML=t.weatherPlaceholder.map(d=>{
-    const year="2026";
-    const monthDay={
-      "October 21":"10-21",
-      "October 22":"10-22",
-      "October 23":"10-23",
-      "October 24":"10-24",
-      "October 25":"10-25"
-    }[d.date];
-    const iso=monthDay?`${year}-${monthDay}`:"";
-    const forecast=byDate.get(iso);
-    const condition=forecast?weatherLabel(forecast.code):null;
-    const low=Number.isFinite(forecast?.low)?`${Math.round(forecast.low)}°`:"—";
-    const high=Number.isFinite(forecast?.high)?`${Math.round(forecast.high)}°`:"—";
-    const rain=Number.isFinite(forecast?.rain)?`${Math.round(forecast.rain)}%`:"—";
-    return `<div class="weather-row">
+function isTripDate(iso){
+  return iso>="2026-10-21" && iso<="2026-10-25";
+}
+
+function renderTenDayForecast(daily){
+  if(!daily?.time?.length) return false;
+
+  $("#weather-placeholder-list").innerHTML=daily.time.slice(0,10).map((iso,i)=>{
+    const {day,date}=formatForecastDate(iso,i);
+    const low=Number.isFinite(daily.temperature_2m_min?.[i])?`${Math.round(daily.temperature_2m_min[i])}°`:"—";
+    const high=Number.isFinite(daily.temperature_2m_max?.[i])?`${Math.round(daily.temperature_2m_max[i])}°`:"—";
+    const rain=Number.isFinite(daily.precipitation_probability_max?.[i])?`${Math.round(daily.precipitation_probability_max[i])}%`:"—";
+    const [icon,label]=weatherLabel(daily.weather_code?.[i]);
+    const trip=isTripDate(iso);
+    return `<div class="weather-row${trip?" weather-trip-row":""}">
       <div>
-        <strong>${esc(d.day)}</strong>
-        <span>${esc(d.date)}</span>
-        ${condition?`<span class="weather-condition">${condition[0]} ${esc(condition[1])}</span>`:""}
+        <strong>${esc(day)}${trip?' <span class="weather-trip-badge">Men’s Trip</span>':""}</strong>
+        <span>${esc(date)}</span>
+        <span class="weather-condition">${icon} ${esc(label)}</span>
       </div>
       <div>${low}</div><div>${high}</div><div>${rain}</div>
     </div>`;
   }).join("");
-
-  return byDate;
+  return true;
 }
 
 async function setupLiveWeather(t){
-  renderTripWeatherRows(t);
-
   try{
     const response=await fetch(WEATHER_URL,{cache:"no-store"});
     if(!response.ok) throw new Error(`Weather request failed: ${response.status}`);
@@ -82,33 +76,27 @@ async function setupLiveWeather(t){
     const temp=Number.isFinite(current.temperature_2m)?`${Math.round(current.temperature_2m)}°F`:"—";
     const feels=Number.isFinite(current.apparent_temperature)?`${Math.round(current.apparent_temperature)}°`:"—";
     const wind=Number.isFinite(current.wind_speed_10m)?`${Math.round(current.wind_speed_10m)} mph`:"—";
-    const updated=current.time
-      ? new Intl.DateTimeFormat("en-US",{timeZone:"America/Los_Angeles",weekday:"short",hour:"numeric",minute:"2-digit"}).format(new Date(current.time+"-07:00"))
-      : "";
 
     $("#weather-current").innerHTML=`
       <div class="weather-current-copy">
         <span class="status status-selected">● Live</span>
         <h3>San Francisco now</h3>
-        <p>${icon} ${esc(label)}${updated?` · Updated ${esc(updated)} PT`:""}</p>
+        <p>${icon} ${esc(label)}</p>
       </div>
       <div class="weather-current-temp">${temp}</div>
       <div class="weather-current-detail"><span>Feels like <strong>${feels}</strong></span><span>Wind <strong>${wind}</strong></span></div>`;
 
-    const byDate=renderTripWeatherRows(t,data.daily);
-    const tripDates=["2026-10-21","2026-10-22","2026-10-23","2026-10-24","2026-10-25"];
-    const available=tripDates.filter(d=>byDate.has(d));
+    const rendered=renderTenDayForecast(data.daily);
+    if(!rendered) throw new Error("No daily forecast returned");
 
-    if(available.length===tripDates.length){
-      $("#weather-note").textContent="Live forecast for the full trip. It refreshes automatically whenever you open the app.";
-    }else if(available.length){
-      $("#weather-note").textContent="The trip is entering forecast range. Available days are live now; the remaining days will fill in automatically.";
-    }else{
-      $("#weather-note").textContent="The trip forecast will populate automatically when October 21–25 enters the live forecast window. Current San Francisco conditions above are live now.";
-    }
+    const tripVisible=(data.daily?.time||[]).some(isTripDate);
+    $("#weather-note").textContent=tripVisible
+      ? "The live 10-day forecast now includes Men’s Trip dates. Trip days are highlighted."
+      : "Live 10-day San Francisco forecast. As October 21–25 enters this window, the trip days will appear automatically.";
   }catch(error){
     console.warn("Live weather unavailable",error);
     $("#weather-current").innerHTML=`<div><span class="status">Weather unavailable</span><h3>San Francisco weather</h3><p>Live conditions could not be loaded right now.</p></div>`;
+    $("#weather-placeholder-list").innerHTML=`<div class="weather-row"><div><strong>Forecast unavailable</strong><span>Please refresh later.</span></div><div>—</div><div>—</div><div>—</div></div>`;
     $("#weather-note").textContent="The weather service is temporarily unavailable. Refresh later to try again.";
   }
 }

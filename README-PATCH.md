@@ -1,13 +1,12 @@
-# Build 7.2.0
+# Build 7.2.1
 
-Live weather feature.
+10-day live weather forecast.
 
 Changes:
-- Added live current San Francisco weather to the Weather section.
-- Added an automatically updating five-day trip forecast for October 21–25 once those dates enter forecast range.
-- Shows daily low, high, precipitation probability, and a simple condition label.
-- Until the trip dates are in range, the table stays ready and explains that it will fill automatically.
-- Added graceful error handling so a weather-service outage does not break the rest of the app.
-- Live weather uses Open-Meteo and does not require an API key.
-- Third-party weather responses are not cached by the service worker, so weather stays live.
-- Bumped app version/cache to 7.2.0.
+- Weather now shows a rolling live 10-day San Francisco forecast, starting with today.
+- Each day shows conditions, low, high, and precipitation probability.
+- The trip dates October 21–25 automatically appear when they enter the 10-day window.
+- Men’s Trip dates are highlighted when visible in the forecast.
+- Current San Francisco conditions remain at the top.
+- Open-Meteo remains the data source; no API key or Firebase changes are required.
+- Bumped app version/cache to 7.2.1.
