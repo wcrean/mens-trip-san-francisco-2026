@@ -10,6 +10,109 @@ async function loadTrip(){
   return response.json();
 }
 
+
+const WEATHER_URL = "https://api.open-meteo.com/v1/forecast?latitude=37.7749&longitude=-122.4194&current=temperature_2m,apparent_temperature,weather_code,wind_speed_10m&daily=weather_code,temperature_2m_max,temperature_2m_min,precipitation_probability_max&temperature_unit=fahrenheit&wind_speed_unit=mph&timezone=America%2FLos_Angeles&forecast_days=16";
+
+function weatherLabel(code){
+  if(code===0) return ["☀️","Clear"];
+  if(code===1) return ["🌤️","Mainly clear"];
+  if(code===2) return ["⛅","Partly cloudy"];
+  if(code===3) return ["☁️","Overcast"];
+  if(code===45 || code===48) return ["🌫️","Fog"];
+  if(code>=51 && code<=57) return ["🌦️","Drizzle"];
+  if(code>=61 && code<=67) return ["🌧️","Rain"];
+  if(code>=71 && code<=77) return ["🌨️","Snow"];
+  if(code>=80 && code<=82) return ["🌦️","Showers"];
+  if(code>=85 && code<=86) return ["🌨️","Snow showers"];
+  if(code>=95 && code<=99) return ["⛈️","Thunderstorms"];
+  return ["🌡️","Conditions"];
+}
+
+function renderTripWeatherRows(t, daily=null){
+  const byDate=new Map();
+  if(daily?.time){
+    daily.time.forEach((date,i)=>{
+      byDate.set(date,{
+        low:daily.temperature_2m_min?.[i],
+        high:daily.temperature_2m_max?.[i],
+        rain:daily.precipitation_probability_max?.[i],
+        code:daily.weather_code?.[i]
+      });
+    });
+  }
+
+  $("#weather-placeholder-list").innerHTML=t.weatherPlaceholder.map(d=>{
+    const year="2026";
+    const monthDay={
+      "October 21":"10-21",
+      "October 22":"10-22",
+      "October 23":"10-23",
+      "October 24":"10-24",
+      "October 25":"10-25"
+    }[d.date];
+    const iso=monthDay?`${year}-${monthDay}`:"";
+    const forecast=byDate.get(iso);
+    const condition=forecast?weatherLabel(forecast.code):null;
+    const low=Number.isFinite(forecast?.low)?`${Math.round(forecast.low)}°`:"—";
+    const high=Number.isFinite(forecast?.high)?`${Math.round(forecast.high)}°`:"—";
+    const rain=Number.isFinite(forecast?.rain)?`${Math.round(forecast.rain)}%`:"—";
+    return `<div class="weather-row">
+      <div>
+        <strong>${esc(d.day)}</strong>
+        <span>${esc(d.date)}</span>
+        ${condition?`<span class="weather-condition">${condition[0]} ${esc(condition[1])}</span>`:""}
+      </div>
+      <div>${low}</div><div>${high}</div><div>${rain}</div>
+    </div>`;
+  }).join("");
+
+  return byDate;
+}
+
+async function setupLiveWeather(t){
+  renderTripWeatherRows(t);
+
+  try{
+    const response=await fetch(WEATHER_URL,{cache:"no-store"});
+    if(!response.ok) throw new Error(`Weather request failed: ${response.status}`);
+    const data=await response.json();
+
+    const current=data.current||{};
+    const [icon,label]=weatherLabel(current.weather_code);
+    const temp=Number.isFinite(current.temperature_2m)?`${Math.round(current.temperature_2m)}°F`:"—";
+    const feels=Number.isFinite(current.apparent_temperature)?`${Math.round(current.apparent_temperature)}°`:"—";
+    const wind=Number.isFinite(current.wind_speed_10m)?`${Math.round(current.wind_speed_10m)} mph`:"—";
+    const updated=current.time
+      ? new Intl.DateTimeFormat("en-US",{timeZone:"America/Los_Angeles",weekday:"short",hour:"numeric",minute:"2-digit"}).format(new Date(current.time+"-07:00"))
+      : "";
+
+    $("#weather-current").innerHTML=`
+      <div class="weather-current-copy">
+        <span class="status status-selected">● Live</span>
+        <h3>San Francisco now</h3>
+        <p>${icon} ${esc(label)}${updated?` · Updated ${esc(updated)} PT`:""}</p>
+      </div>
+      <div class="weather-current-temp">${temp}</div>
+      <div class="weather-current-detail"><span>Feels like <strong>${feels}</strong></span><span>Wind <strong>${wind}</strong></span></div>`;
+
+    const byDate=renderTripWeatherRows(t,data.daily);
+    const tripDates=["2026-10-21","2026-10-22","2026-10-23","2026-10-24","2026-10-25"];
+    const available=tripDates.filter(d=>byDate.has(d));
+
+    if(available.length===tripDates.length){
+      $("#weather-note").textContent="Live forecast for the full trip. It refreshes automatically whenever you open the app.";
+    }else if(available.length){
+      $("#weather-note").textContent="The trip is entering forecast range. Available days are live now; the remaining days will fill in automatically.";
+    }else{
+      $("#weather-note").textContent="The trip forecast will populate automatically when October 21–25 enters the live forecast window. Current San Francisco conditions above are live now.";
+    }
+  }catch(error){
+    console.warn("Live weather unavailable",error);
+    $("#weather-current").innerHTML=`<div><span class="status">Weather unavailable</span><h3>San Francisco weather</h3><p>Live conditions could not be loaded right now.</p></div>`;
+    $("#weather-note").textContent="The weather service is temporarily unavailable. Refresh later to try again.";
+  }
+}
+
 async function init(){
   const t = await loadTrip();
   $("#trip-name").textContent=t.name;
@@ -139,7 +242,7 @@ async function init(){
     <a class="photo-button ${uploadReady?"":"disabled"}" ${uploadReady?`href="${photo.uploadUrl}" target="_blank" rel="noopener"`:'aria-disabled="true"'}><span>Upload My Pictures</span><small>${uploadReady?"Add pictures from your phone":"Link coming soon"}</small></a>
   </div><p class="photo-note">${esc(photo.note)}</p>`;
 
-  $("#weather-placeholder-list").innerHTML=t.weatherPlaceholder.map(d=>`<div class="weather-row"><div><strong>${esc(d.day)}</strong><span>${esc(d.date)}</span></div><div>${esc(d.low)}</div><div>${esc(d.high)}</div><div>${esc(d.rain)}</div></div>`).join("");
+  setupLiveWeather(t);
 
   const rows=[
     ["Status",...t.accommodations.map(a=>a.status)],

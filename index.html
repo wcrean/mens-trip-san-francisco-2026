@@ -91,11 +91,18 @@
   </section>
 
   <section id="weather">
-    <div class="heading"><div><p class="eyebrow">A few days before departure</p><h2>Weather forecast</h2></div></div>
+    <div class="heading"><div><p class="eyebrow">Live from San Francisco</p><h2>Weather</h2></div></div>
+    <div class="weather-current" id="weather-current" aria-live="polite">
+      <div>
+        <span class="status status-current">Loading live weather…</span>
+        <h3>San Francisco now</h3>
+      </div>
+    </div>
     <div class="weather-panel">
-      <div class="weather-head"><span>Day</span><span>Low</span><span>High</span><span>Rain</span></div>
+      <div class="weather-head"><span>Trip day</span><span>Low</span><span>High</span><span>Rain</span></div>
       <div id="weather-placeholder-list" class="weather-placeholder-list"></div>
-      <p class="weather-note">We’ll fill this in when the San Francisco forecast is close enough to trust.</p>
+      <p id="weather-note" class="weather-note">Checking the latest forecast…</p>
+      <p class="weather-source">Weather data: <a href="https://open-meteo.com/" target="_blank" rel="noopener">Open-Meteo</a></p>
     </div>
   </section>
 
