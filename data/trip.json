@@ -3,7 +3,7 @@
   "subtitle": "Good friends. Great city. Stories in the making.",
   "location": "San Francisco, California",
   "dates": "October 21–25, 2026",
-  "version": "7.3.1",
+  "version": "7.3.2",
   "phases": [
     {
       "label": "Location",
@@ -588,7 +588,7 @@
       }
     ],
     "voteMode": "shared",
-    "voteNote": "Votes are shared live across everyone’s phones. All options stay visible and automatically sort by group preference.",
+    "voteNote": "Votes are shared live. Tap 👍 or 👎 to vote; tap your selected choice again to remove your vote. Bars stay in a fixed order.",
     "displayMode": "leaderboard"
   },
   "taglines": [
