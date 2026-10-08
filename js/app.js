@@ -188,7 +188,7 @@ async function init(){
   }
 
   function renderBars(){
-    $("#bar-list").innerHTML=rankedBars().map((b,index)=>{
+    $("#bar-list").innerHTML=allBars.map((b,index)=>{
       const votes=sharedVotes.totals[b.id]||{up:0,down:0};
       const mine=sharedVotes.mine[b.id]||null;
       const score=votes.up-votes.down;
@@ -196,7 +196,7 @@ async function init(){
         <div class="bar-photo-wrap">
           <img src="${b.image}" alt="${esc(b.imageAlt)}" loading="lazy">
           <div class="bar-photo-shade"></div>
-          <span class="bar-rank">#${index+1}</span>
+          <span class="bar-rank">🍻</span>
           <div class="bar-photo-title"><span class="bar-type-icon" aria-hidden="true">${esc(b.icon||"🍻")}</span><div><span>${esc(b.category)}</span><h3>${esc(b.name)}</h3></div></div>
           <a class="bar-photo-credit" href="${b.imageSource}" target="_blank" rel="noopener">Photo source</a>
         </div>
