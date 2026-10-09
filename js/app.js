@@ -175,6 +175,12 @@ async function init(){
     <div class="bar-links"><a class="pill" href="${r.website}" target="_blank" rel="noopener">Website</a><a class="pill" href="${r.maps}" target="_blank" rel="noopener">Map</a></div>
   </article>`).join("");
 
+  $("#chinese-restaurant-list").innerHTML=(t.chineseRestaurants||[]).map(r=>`<article class="restaurant-card">
+    <div class="restaurant-top"><span class="restaurant-category">${esc(r.category)}</span><span class="bar-walk">${esc(r.walk)}</span></div>
+    <h3>${esc(r.name)}</h3><p>${esc(r.summary)}</p>
+    <div class="bar-links"><a class="pill" href="${r.maps}" target="_blank" rel="noopener">Map & details</a></div>
+  </article>`).join("");
+
   const allBars=[...t.walkableBars.initial,...t.walkableBars.bench];
   let sharedVotes={totals:{},mine:{}};
   let voteConnectionState="Connecting…";

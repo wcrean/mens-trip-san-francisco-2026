@@ -3,7 +3,7 @@
   "subtitle": "Good friends. Great city. Stories in the making.",
   "location": "San Francisco, California",
   "dates": "October 21–25, 2026",
-  "version": "7.3.2",
+  "version": "7.3.3",
   "phases": [
     {
       "label": "Location",
@@ -720,6 +720,36 @@
       "summary": "The easy fallback for cocktails, shareable appetizers, or a meal when nobody feels like organizing another movement.",
       "website": "https://www.thebarnessf.com/dining/",
       "maps": "https://www.google.com/maps/search/?api=1&query=The+Barnes+Restaurant+Bar+San+Francisco"
+    }
+  ],
+  "chineseRestaurants": [
+    {
+      "name": "Z & Y Restaurant",
+      "category": "Sichuan · Chinatown",
+      "walk": "Dinner",
+      "summary": "Spicy Sichuan favorites and shareable dishes. Strong group-dinner option.",
+      "maps": "https://www.google.com/maps/search/?api=1&query=Z+and+Y+Restaurant+San+Francisco"
+    },
+    {
+      "name": "Hong Kong Lounge",
+      "category": "Dim sum · Richmond",
+      "walk": "Weekend lunch",
+      "summary": "Traditional dim sum, dumplings and buns for a weekend lunch.",
+      "maps": "https://www.google.com/maps/search/?api=1&query=Hong+Kong+Lounge+San+Francisco"
+    },
+    {
+      "name": "Dumpling Home",
+      "category": "Soup dumplings · Hayes Valley",
+      "walk": "Casual stop",
+      "summary": "Go for the soup dumplings; ideal for a smaller group.",
+      "maps": "https://www.google.com/maps/search/?api=1&query=Dumpling+Home+San+Francisco"
+    },
+    {
+      "name": "Four Kings",
+      "category": "Modern Cantonese · Chinatown",
+      "walk": "Reservation advised",
+      "summary": "Inventive Cantonese dishes; reservations can be hard to get.",
+      "maps": "https://www.google.com/maps/search/?api=1&query=Four+Kings+San+Francisco"
     }
   ]
 }
