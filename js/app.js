@@ -123,13 +123,13 @@ async function init(){
     document.querySelector("#reunion-nav")?.remove();
   }
   const today=t.rightNow.days.find(d=>d.date===dateParts);
-  const tripStart=new Date(`${t.rightNow.tripStart}T12:00:00`);
-  const tripEnd=new Date(`${t.rightNow.tripEnd}T23:59:59`);
+  const beforeTrip=dateParts<t.rightNow.tripStart;
+  const afterTrip=dateParts>t.rightNow.tripEnd;
   let rightNowHtml="";
-  if(now<tripStart){
-    const days=Math.ceil((tripStart-now)/86400000);
+  if(beforeTrip){
+    const days=Math.max(1,Math.ceil((Date.parse(t.rightNow.tripStart+"T12:00:00Z")-Date.parse(dateParts+"T12:00:00Z"))/86400000));
     rightNowHtml=`<span class="status status-current">Coming up</span><h3>${days} day${days===1?"":"s"} until San Francisco</h3>`;
-  }else if(now>tripEnd){
+  }else if(afterTrip){
     rightNowHtml=`<span class="status status-selected">✓ Trip complete</span><h3>${esc(t.rightNow.tripComplete.title)}</h3><p>${esc(t.rightNow.tripComplete.text)}</p>`;
   }else if(today){
     const currentMinutes=Number(new Intl.DateTimeFormat("en-US",{timeZone:tz,hour:"2-digit",minute:"2-digit",hour12:false}).format(now).replace(":",""));
@@ -159,12 +159,9 @@ async function init(){
   </article>`).join("");
 
   const dinner=t.featuredDinner;
-  $("#dinner-feature").innerHTML=`<div class="dinner-feature-copy"><div class="adventure-date"><span>${esc(dinner.day)}</span><strong>${esc(dinner.date)}</strong></div><p class="eyebrow">The official men’s dinner</p><h3>${esc(dinner.venue)}</h3><p class="adventure-time">🕖 ${esc(dinner.time)} · ${esc(dinner.address)}</p><p>${esc(dinner.summary)}</p><div class="bar-links"><a class="primary-link" href="${dinner.maps}" target="_blank" rel="noopener">Directions</a><a class="pill" href="${dinner.website}" target="_blank" rel="noopener">Restaurant website</a></div></div>`;
+  $("#dinner-feature").innerHTML=`<div class="dinner-feature-copy"><div class="adventure-date"><span>${esc(dinner.day)}</span><strong>${esc(dinner.date)}</strong></div><h3>Official Men’s Dinner</h3><p class="dinner-venue">${esc(dinner.venue)}</p><p class="adventure-time">🕖 ${esc(dinner.time)} · ${esc(dinner.address)}</p><p>${esc(dinner.summary)}</p><div class="bar-links"><a class="primary-link" href="${dinner.maps}" target="_blank" rel="noopener">Directions</a><a class="pill" href="${dinner.website}" target="_blank" rel="noopener">Restaurant website</a></div></div>`;
 
-  $("#tour-highlight-list").innerHTML=t.tourHighlights.map(v=>`<article class="visual-card">
-    <img src="${v.image}" alt="${esc(v.alt)}" loading="lazy">
-    <div class="visual-overlay"><h3>${esc(v.name)}</h3><span>${esc(v.text)}</span></div>
-  </article>`).join("");
+  $("#football-feature").innerHTML=`<div class="football-copy"><span class="football-day">SATURDAY · OCTOBER 24</span><h3>🏈 SMU vs. Cal — Watch Party</h3><p class="adventure-time">9:00 AM Pacific · The CW</p><p>Venue to be decided. Candidates: The Boardroom, Kezar Pub and Final Final. We’ll confirm an early opening and a TV for the game.</p></div>`;
 
   $("#hotel-card").innerHTML=`<div class="hotel-copy"><span class="status status-selected">✓ Our home base</span>
     <p class="eyebrow">225 Powell Street</p><h3>${esc(t.hotel.name)}</h3><p>${esc(t.hotel.summary)}</p>
@@ -241,17 +238,6 @@ async function init(){
 
   setupLiveWeather(t);
 
-  const rows=[
-    ["Status",...t.accommodations.map(a=>a.status)],
-    ["Type",...t.accommodations.map(a=>a.type)],
-    ["Neighborhood",...t.accommodations.map(a=>a.neighborhood)],
-    ["Total",...t.accommodations.map(a=>money(a.total))],
-    ["Per person",...t.accommodations.map(a=>money(a.perPerson))],
-    ["Sleeping",...t.accommodations.map(a=>a.sleeping)],
-    ["Gathering",...t.accommodations.map(a=>a.gathering)],
-    ["Cancellation",...t.accommodations.map(a=>a.cancellation)]
-  ];
-  $("#comparison-table").innerHTML=`<thead><tr><th>Consideration</th>${t.accommodations.map(a=>`<th>${esc(a.name)}</th>`).join("")}</tr></thead><tbody>${rows.map(row=>`<tr>${row.map((cell,i)=>i===0?`<th>${esc(cell)}</th>`:`<td>${esc(cell)}</td>`).join("")}</tr>`).join("")}</tbody>`;
 
   $("#photo-credit-list").innerHTML=t.photoCredits.map(i=>`<a class="photo-credit" href="${i.source}" target="_blank" rel="noopener"><strong>${esc(i.credit)}</strong><span>${esc(i.alt)}</span></a>`).join("");
 

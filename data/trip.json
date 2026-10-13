@@ -3,7 +3,7 @@
   "subtitle": "Good friends. Great city. Stories in the making.",
   "location": "San Francisco, California",
   "dates": "October 21–25, 2026",
-  "version": "7.4.0",
+  "version": "7.4.1",
   "phases": [
     {
       "label": "Location",
@@ -338,17 +338,17 @@
     },
     {
       "traveler": "Avi",
-      "arrival": "3:30 PM",
+      "arrival": "3:35 PM",
       "airport": "SFO",
-      "airline": "Airline TBD",
-      "flight": "Flight number TBD",
-      "origin": "Origin TBD",
-      "meetup": "Bringing up the rear and meeting the brotherhood at the hotel."
+      "airline": "United",
+      "flight": "UA 1267",
+      "origin": "Fort Lauderdale",
+      "meetup": "Arrives at SFO Terminal 3 and joins the crew at The Barnes."
     }
   ],
   "arrivalSummary": {
     "title": "Wednesday: everybody comes together",
-    "text": "Jason lands first and waits at SFO; Roland and Bill’s group arrive only 22 minutes apart; Avi joins later at The Barnes. The trip really begins when the full crew is together at the hotel."
+    "text": "Jason lands first and waits at SFO; Roland and the Texas gang arrive only 22 minutes apart; Avi joins later at The Barnes. The trip really begins when the full crew is together at the hotel."
   },
   "photoHub": {
     "title": "Trip Photos",
@@ -396,9 +396,9 @@
             "detail": "American Airlines 2387 from DFW. Main airport reunion."
           },
           {
-            "time": "15:30",
+            "time": "15:35",
             "title": "Avi lands at SFO",
-            "detail": "He’ll meet the brotherhood at the hotel."
+            "detail": "United UA 1267 from Fort Lauderdale; Terminal 3."
           }
         ]
       },
@@ -434,6 +434,11 @@
         "label": "Saturday, October 24",
         "events": [
           {
+            "time": "09:00",
+            "title": "SMU vs. Cal football",
+            "detail": "9 AM Pacific on The CW. Watch-party venue TBD; Boardroom, Kezar Pub and Final Final are candidates."
+          },
+          {
             "time": "19:00",
             "title": "Official Men’s Dinner at The Progress",
             "detail": "7 PM · 1525 Fillmore Street · semi-private Balcony table. Annual Card Drawing."
@@ -445,9 +450,9 @@
         "label": "Sunday, October 25",
         "events": [
           {
-            "time": "09:00",
-            "title": "Departure day",
-            "detail": "Flight details and final meetup plans still to be added."
+            "time": "10:50",
+            "title": "Avi departs SFO",
+            "detail": "United UA 1259 to Houston, connecting to UA 1956 for Fort Lauderdale."
           }
         ]
       }
@@ -588,7 +593,7 @@
     "Eight brothers. One city. Countless stories.",
     "Good friends. Good beer. Great stories.",
     "San Francisco — the next chapter.",
-    "The brotherhood heads west.",
+    "The Coterie heads west.",
     "Meet up. Look around. Raise a glass."
   ],
   "hotel": {
@@ -606,7 +611,7 @@
   },
   "reunion": {
     "title": "The brotherhood reconvenes",
-    "summary": "Jason lands first and waits at SFO; Roland and Bill’s group arrive only 22 minutes apart; Avi joins later at The Barnes. The trip really begins when the full crew is together at the hotel.",
+    "summary": "Jason lands first and waits at SFO; Roland and the Texas gang arrive only 22 minutes apart; Avi joins later at The Barnes. The trip really begins when the full crew is together at the hotel.",
     "closing": "By late afternoon, everyone should be together at the hotel and ready for the first drink, dinner, and stories."
   },
   "adventures": [
@@ -744,7 +749,7 @@
     "name": "Official Men’s Dinner",
     "venue": "The Progress",
     "address": "1525 Fillmore Street, San Francisco",
-    "summary": "Our semi-private Balcony table overlooks the kitchen. Dinner, brotherhood, and the traditional Annual Card Drawing.",
+    "summary": "Our semi-private Balcony table overlooks the kitchen. Dinner, the Coterie, and the traditional Annual Card Drawing.",
     "maps": "https://www.google.com/maps/search/?api=1&query=The+Progress+1525+Fillmore+Street+San+Francisco",
     "website": "https://www.theprogress-sf.com/"
   }

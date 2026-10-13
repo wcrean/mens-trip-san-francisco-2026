@@ -242,3 +242,14 @@ body.light .right-now-card::after{background:rgba(216,137,67,.14)}
 .dinner-feature{margin-top:1.25rem;padding:1.5rem;border:1px solid rgba(255,255,255,.18);border-radius:18px;background:linear-gradient(120deg,rgba(125,89,42,.28),rgba(25,32,43,.88))}
 .dinner-feature h3{font-size:clamp(1.5rem,3vw,2.15rem);margin:.35rem 0}
 .dinner-feature p{max-width:720px}
+
+/* v7.4.1: scannable day-first featured plans */
+.adventure-date{align-items:baseline;flex-wrap:wrap;gap:8px 16px;padding-bottom:12px;margin-bottom:15px}
+.adventure-date span{font-size:clamp(1.35rem,3vw,1.8rem);line-height:1.1;font-weight:950;letter-spacing:.015em;text-transform:uppercase;color:var(--accent)}
+.adventure-date strong{font-size:.95rem;font-weight:700}
+.dinner-feature h3{font-size:clamp(1.8rem,4vw,2.5rem);margin:.55rem 0 .1rem}
+.dinner-venue{font-size:1.15rem;font-weight:800;margin:.2rem 0 .65rem}
+.football-feature{margin-top:20px;padding:20px 24px;border:1px solid var(--line);border-radius:18px;background:var(--surface)}
+.football-day{font-size:.8rem;font-weight:900;letter-spacing:.08em;color:var(--accent)}
+.football-feature h3{font-size:1.3rem;margin:8px 0}
+.football-feature p{margin:7px 0}
