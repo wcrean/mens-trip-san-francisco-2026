@@ -1,3 +1,3 @@
-# v7.4.1
+# v7.4.2
 
-Day-first featured plans; Official Men’s Dinner title emphasized; removed lodging comparison and tour photo strip; Coterie wording; Avi flights; SMU-Cal 9 AM watch-party candidate note; Pacific-time day-aware Right Now. No Firebase changes.
+Make “The Coterie heads west” the consistent header tagline (rather than one of five random slogans); rename reunion heading to “The Coterie reconvenes”; use crew instead of group in visible game and voting labels. Preserve v7.4.1 functionality. Cache version bumped.

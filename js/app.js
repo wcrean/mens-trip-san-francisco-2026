@@ -207,7 +207,7 @@ async function init(){
           <a class="bar-photo-credit" href="${b.imageSource}" target="_blank" rel="noopener">Photo source</a>
         </div>
         <div class="bar-card-body">
-          <div class="bar-meta-row"><span class="bar-walk">📍 ${esc(b.walk)}</span><div class="bar-score"><strong>${score>0?"+":""}${score}</strong><span>group score</span></div></div>
+          <div class="bar-meta-row"><span class="bar-walk">📍 ${esc(b.walk)}</span><div class="bar-score"><strong>${score>0?"+":""}${score}</strong><span>crew score</span></div></div>
           <p>${esc(b.summary)}</p>
           <div class="bar-links"><a class="pill" href="${b.website}" target="_blank" rel="noopener">Website</a><a class="pill" href="${b.maps}" target="_blank" rel="noopener">Map</a></div>
           <div class="vote-row">

@@ -3,7 +3,7 @@
   "subtitle": "Good friends. Great city. Stories in the making.",
   "location": "San Francisco, California",
   "dates": "October 21–25, 2026",
-  "version": "7.4.1",
+  "version": "7.4.2",
   "phases": [
     {
       "label": "Location",
@@ -590,11 +590,7 @@
     "displayMode": "leaderboard"
   },
   "taglines": [
-    "Eight brothers. One city. Countless stories.",
-    "Good friends. Good beer. Great stories.",
-    "San Francisco — the next chapter.",
-    "The Coterie heads west.",
-    "Meet up. Look around. Raise a glass."
+    "The Coterie heads west."
   ],
   "hotel": {
     "name": "The Barnes San Francisco",
@@ -610,7 +606,7 @@
     ]
   },
   "reunion": {
-    "title": "The brotherhood reconvenes",
+    "title": "The Coterie reconvenes",
     "summary": "Jason lands first and waits at SFO; Roland and the Texas gang arrive only 22 minutes apart; Avi joins later at The Barnes. The trip really begins when the full crew is together at the hotel.",
     "closing": "By late afternoon, everyone should be together at the hotel and ready for the first drink, dinner, and stories."
   },
