@@ -1,3 +1,3 @@
-# v7.4.2
+# v7.4.3
 
-Make “The Coterie heads west” the consistent header tagline (rather than one of five random slogans); rename reunion heading to “The Coterie reconvenes”; use crew instead of group in visible game and voting labels. Preserve v7.4.1 functionality. Cache version bumped.
+Saturday is chronological: 9 AM SMU–Cal watch party before 7 PM Official Men’s Dinner. Adds three compact bar photo cards, Google Maps directions, and reminder to confirm 9 AM seating and The CW. Bar images are hosted externally with fallbacks. Bumps app version and service worker cache.

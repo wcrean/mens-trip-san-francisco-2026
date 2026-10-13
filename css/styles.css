@@ -253,3 +253,16 @@ body.light .right-now-card::after{background:rgba(216,137,67,.14)}
 .football-day{font-size:.8rem;font-weight:900;letter-spacing:.08em;color:var(--accent)}
 .football-feature h3{font-size:1.3rem;margin:8px 0}
 .football-feature p{margin:7px 0}
+
+/* v7.4.3: chronological Saturday and compact game-day bar choices */
+.football-feature{margin-top:20px}
+.football-bar-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:16px}
+.football-bar{min-width:0;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:rgba(255,255,255,.04)}
+.football-bar img,.football-image-fallback{display:block;width:100%;height:145px;object-fit:cover}
+.football-image-fallback{align-items:center;justify-content:center;font-size:2.5rem;background:rgba(255,255,255,.07)}
+.football-bar-info{padding:12px}
+.football-bar-info h4{margin:0 0 5px;font-size:1rem}
+.football-bar-info p{margin:0 0 10px;font-size:.83rem}
+.football-bar-info a{font-weight:700;color:var(--accent)}
+.football-reminder{font-weight:650;max-width:780px}
+@media(max-width:560px){.football-bar-grid{gap:8px}.football-bar img,.football-image-fallback{height:85px}.football-bar-info{padding:8px}.football-bar-info h4{font-size:.83rem}.football-bar-info p{font-size:.72rem}.football-bar-info a{font-size:.76rem}}
