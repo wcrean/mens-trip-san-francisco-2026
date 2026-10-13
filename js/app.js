@@ -152,11 +152,14 @@ async function init(){
     <img src="${a.image}" alt="${esc(a.imageAlt)}" loading="lazy">
     <div class="adventure-body">
       <div class="adventure-date"><span>${esc(a.day)}</span><strong>${esc(a.date)}</strong></div>
-      <p class="eyebrow">${esc(a.title)}</p><h3>${esc(a.name)}</h3><p>${esc(a.summary)}</p>
+      <p class="eyebrow">${esc(a.title)}</p><h3>${esc(a.name)}</h3><p class="adventure-time">🕒 ${esc(a.time||"")}</p><p>${esc(a.summary)}</p>
       <div class="moment-list">${a.moments.map(m=>`<span>${esc(m)}</span>`).join("")}</div>
-      <a class="primary-link" href="${a.website}" target="_blank" rel="noopener">${esc(a.button)}</a>
+      ${a.website?`<a class="primary-link" href="${a.website}" target="_blank" rel="noopener">${esc(a.button)}</a>`:""}
     </div>
   </article>`).join("");
+
+  const dinner=t.featuredDinner;
+  $("#dinner-feature").innerHTML=`<div class="dinner-feature-copy"><div class="adventure-date"><span>${esc(dinner.day)}</span><strong>${esc(dinner.date)}</strong></div><p class="eyebrow">The official men’s dinner</p><h3>${esc(dinner.venue)}</h3><p class="adventure-time">🕖 ${esc(dinner.time)} · ${esc(dinner.address)}</p><p>${esc(dinner.summary)}</p><div class="bar-links"><a class="primary-link" href="${dinner.maps}" target="_blank" rel="noopener">Directions</a><a class="pill" href="${dinner.website}" target="_blank" rel="noopener">Restaurant website</a></div></div>`;
 
   $("#tour-highlight-list").innerHTML=t.tourHighlights.map(v=>`<article class="visual-card">
     <img src="${v.image}" alt="${esc(v.alt)}" loading="lazy">

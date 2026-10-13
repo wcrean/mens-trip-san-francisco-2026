@@ -3,7 +3,7 @@
   "subtitle": "Good friends. Great city. Stories in the making.",
   "location": "San Francisco, California",
   "dates": "October 21–25, 2026",
-  "version": "7.3.3",
+  "version": "7.4.0",
   "phases": [
     {
       "label": "Location",
@@ -118,9 +118,7 @@
     "reason": "Gus already has it locked down, it is the cheapest confirmed option, and we can bail by October 15 if a better house appears. Solid veteran move by Gus."
   },
   "questions": [
-    "Confirm the dates for Rob's two booked tours",
-    "Are we keeping The Barnes, or does a house win the day?",
-    "Has Roland found the legendary Men's Dinner yet?"
+    "Are we keeping The Barnes, or does a house win the day?"
   ],
   "notes": [
     {
@@ -203,19 +201,19 @@
       "task": "Alcatraz / Muir Woods / Sausalito tour",
       "owner": "Rob Baker",
       "status": "Booked",
-      "detail": "Date still unknown"
+      "detail": "Thursday bus tour (flexible 10–5); Friday Alcatraz/Muir Woods/Sausalito (10:35 AM)"
     },
     {
       "task": "Hop-on, hop-off bus tour",
       "owner": "Rob Baker",
       "status": "Booked",
-      "detail": "Date still unknown"
+      "detail": "Thursday bus tour (flexible 10–5); Friday Alcatraz/Muir Woods/Sausalito (10:35 AM)"
     },
     {
       "task": "Men's Dinner",
       "owner": "Roland",
-      "status": "Assigned",
-      "detail": "Restaurant selection pending"
+      "status": "Booked",
+      "detail": "The Progress · Saturday Oct 24 · 7 PM"
     },
     {
       "task": "Restaurants and bars",
@@ -235,9 +233,9 @@
       "name": "Alcatraz with Muir Woods and Sausalito Tour",
       "status": "Booked",
       "owner": "Rob Baker",
-      "date": "Friday, October 23",
+      "date": "Friday, October 23 · 10:35 AM",
       "duration": "Approximately 7–8 hours",
-      "summary": "Friday’s signature outing combining Alcatraz, Muir Woods, and Sausalito.",
+      "summary": "Alcatraz, Muir Woods and Sausalito. Pier 33; check ticket for arrival instructions.",
       "website": "https://www.viator.com/tours/San-Francisco/Alcatraz-with-Muir-Woods-and-Sausalito-Tour/d651-152424P2?mcid=56757&dd_referrer=",
       "source": "Viator listing supplied by Bill"
     },
@@ -245,9 +243,9 @@
       "name": "San Francisco Hop-On, Hop-Off Bus Tour",
       "status": "Booked",
       "owner": "Rob Baker",
-      "date": "Thursday, October 22",
+      "date": "Thursday, October 22 · flexible 10 AM–5 PM",
       "duration": "Full-day sightseeing at our own pace",
-      "summary": "Our Thursday introduction to San Francisco, with the freedom to hop off for neighborhoods, views, food, and landmarks.",
+      "summary": "Hop on and off at your own pace. Planning window 10 AM–5 PM; provider hours unconfirmed.",
       "website": "",
       "source": "Family planning information"
     }
@@ -371,7 +369,7 @@
     "tripEnd": "2026-10-25",
     "preTrip": {
       "title": "Next move",
-      "text": "Lock down the lodging, confirm Rob’s tour dates, and keep Roland focused on the Men’s Dinner."
+      "text": "The tours and Saturday dinner are set. San Francisco is almost here."
     },
     "tripComplete": {
       "title": "Mission accomplished",
@@ -409,14 +407,14 @@
         "label": "Thursday, October 22",
         "events": [
           {
-            "time": "09:00",
-            "title": "San Francisco day",
-            "detail": "Activities are still being finalized."
+            "time": "10:00",
+            "title": "Hop-on / hop-off sightseeing",
+            "detail": "Flexible start and finish, roughly 10 AM–5 PM. Rob Baker booked the bus tour."
           },
           {
             "time": "19:00",
             "title": "Evening plans",
-            "detail": "Restaurant or bar details to come."
+            "detail": "Dinner and drinks at the group’s discretion."
           }
         ]
       },
@@ -425,9 +423,9 @@
         "label": "Friday, October 23",
         "events": [
           {
-            "time": "09:00",
-            "title": "Booked activity day",
-            "detail": "Rob’s Alcatraz / Muir Woods / Sausalito tour may land here once the date is confirmed."
+            "time": "10:35",
+            "title": "Alcatraz, Muir Woods & Sausalito",
+            "detail": "Tour time 10:35 AM; Pier 33. Check the ticket for exact arrival instructions."
           }
         ]
       },
@@ -436,14 +434,9 @@
         "label": "Saturday, October 24",
         "events": [
           {
-            "time": "09:00",
-            "title": "San Francisco day",
-            "detail": "Hop-on, hop-off bus tour date still to be confirmed."
-          },
-          {
             "time": "19:00",
-            "title": "Men’s Dinner",
-            "detail": "Roland is on the clock."
+            "title": "Official Men’s Dinner at The Progress",
+            "detail": "7 PM · 1525 Fillmore Street · semi-private Balcony table. Annual Card Drawing."
           }
         ]
       },
@@ -622,34 +615,26 @@
       "date": "October 22",
       "title": "See the city from the top deck",
       "name": "Hop-On, Hop-Off San Francisco",
-      "summary": "Our first full day is a flexible ride through San Francisco’s landmarks and neighborhoods. We can take in the big views, jump off where the group wants, and use the bus as our introduction to the city.",
+      "summary": "Explore San Francisco at your own pace. Rob booked the bus tour; exact provider hours are still to be confirmed.",
       "image": "https://commons.wikimedia.org/wiki/Special:FilePath/SF_Cable_Car.jpg?width=1400",
       "imageAlt": "San Francisco cable car and city sightseeing scene",
-      "website": "https://www.bigbustours.com/en/san-francisco/san-francisco-routes-and-tour-maps",
-      "button": "Explore the route",
-      "moments": [
-        "Golden Gate Bridge",
-        "Fisherman’s Wharf",
-        "Chinatown",
-        "Lombard Street"
-      ]
+      "website": "",
+      "button": "",
+      "moments": [],
+      "time": "Flexible · 10 AM–5 PM"
     },
     {
       "day": "Friday",
       "date": "October 23",
       "title": "The big Bay Area day",
       "name": "Alcatraz, Muir Woods & Sausalito",
-      "summary": "Rob has lined up the signature day of the trip: the history of Alcatraz, a walk among the redwoods, and time along the Sausalito waterfront — all in one memorable outing.",
+      "summary": "Alcatraz, Muir Woods and Sausalito in one day. Check the ticket for arrival instructions.",
       "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Alcatraz_Island_aerial_view.jpg?width=1400",
       "imageAlt": "Aerial view of Alcatraz Island",
       "website": "https://www.viator.com/tours/San-Francisco/Alcatraz-with-Muir-Woods-and-Sausalito-Tour/d651-152424P2",
       "button": "See the tour",
-      "moments": [
-        "Alcatraz Island",
-        "Muir Woods redwoods",
-        "Golden Gate views",
-        "Sausalito waterfront"
-      ]
+      "moments": [],
+      "time": "10:35 AM · Pier 33"
     }
   ],
   "tourHighlights": [
@@ -751,5 +736,16 @@
       "summary": "Inventive Cantonese dishes; reservations can be hard to get.",
       "maps": "https://www.google.com/maps/search/?api=1&query=Four+Kings+San+Francisco"
     }
-  ]
+  ],
+  "featuredDinner": {
+    "day": "Saturday",
+    "date": "October 24",
+    "time": "7:00 PM",
+    "name": "Official Men’s Dinner",
+    "venue": "The Progress",
+    "address": "1525 Fillmore Street, San Francisco",
+    "summary": "Our semi-private Balcony table overlooks the kitchen. Dinner, brotherhood, and the traditional Annual Card Drawing.",
+    "maps": "https://www.google.com/maps/search/?api=1&query=The+Progress+1525+Fillmore+Street+San+Francisco",
+    "website": "https://www.theprogress-sf.com/"
+  }
 }

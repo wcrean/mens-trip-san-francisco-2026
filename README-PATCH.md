@@ -1,3 +1,3 @@
-# v7.3.3
+# v7.4.0
 
-Added Avi’s Chinese Food Picks below the existing Places to Eat cards, with four short descriptions and map links. No Firebase changes.
+Added compact times to Thursday and Friday tour cards and featured Saturday dinner at The Progress. Updated daily agenda and planning details. No Firebase changes.

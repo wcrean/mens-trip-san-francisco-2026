@@ -236,3 +236,9 @@ body.light .right-now-card::after{background:rgba(216,137,67,.14)}
 
 .chinese-picks-heading{margin-top:28px;margin-bottom:14px}
 .chinese-picks-heading h3{font-size:1.4rem;margin:4px 0 0}
+
+/* v7.4.0: compact confirmed schedule and dinner highlight */
+.adventure-time{font-weight:700;color:var(--text,#f4f5f6);margin:.35rem 0 .65rem}
+.dinner-feature{margin-top:1.25rem;padding:1.5rem;border:1px solid rgba(255,255,255,.18);border-radius:18px;background:linear-gradient(120deg,rgba(125,89,42,.28),rgba(25,32,43,.88))}
+.dinner-feature h3{font-size:clamp(1.5rem,3vw,2.15rem);margin:.35rem 0}
+.dinner-feature p{max-width:720px}
