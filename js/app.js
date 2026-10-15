@@ -149,9 +149,9 @@ async function init(){
   }
 
   $("#adventure-list").innerHTML=t.adventures.map(a=>`<article class="adventure-card">
-    <img src="${a.image}" alt="${esc(a.imageAlt)}" loading="lazy">
+    <div class="adventure-card-date"><span>${esc(a.day)}</span><strong>${esc(a.date)}</strong></div>
+    <div class="adventure-photo"><img src="${esc(a.image)}" alt="${esc(a.imageAlt)}" loading="lazy"></div>
     <div class="adventure-body">
-      <div class="adventure-date"><span>${esc(a.day)}</span><strong>${esc(a.date)}</strong></div>
       <p class="eyebrow">${esc(a.title)}</p><h3>${esc(a.name)}</h3><p class="adventure-time">🕒 ${esc(a.time||"")}</p><p>${esc(a.summary)}</p>
       <div class="moment-list">${a.moments.map(m=>`<span>${esc(m)}</span>`).join("")}</div>
       ${a.website?`<a class="primary-link" href="${a.website}" target="_blank" rel="noopener">${esc(a.button)}</a>`:""}

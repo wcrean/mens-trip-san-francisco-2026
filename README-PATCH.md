@@ -1,3 +1,9 @@
-# v7.4.4 — Big Bus tour correction
+# v7.4.5 — mobile featured plans polish
 
-Updated Thursday tour to Big Bus San Francisco, operating hours 10 AM–6 PM, open-top double-decker imagery, official routes/stops link, and Rob Baker attribution. Updated itinerary and task text; bumped service-worker cache. All other v7.4.3 content preserved.
+- Replace Thursday bus illustration with a real Big Bus San Francisco photo from the operator website (requires internet).
+- Put day and date in a separate, solid-background heading above each featured-plan photo.
+- Ensure all featured-plan photo and copy sections stack cleanly on narrow screens.
+- Improve horizontal mobile navigation spacing and scrolling.
+- Update service worker cache version to v7.4.5.
+
+Note: The Big Bus photograph is externally hosted and may require permission from its copyright owner for reuse.
