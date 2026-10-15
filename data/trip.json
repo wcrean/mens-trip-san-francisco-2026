@@ -240,14 +240,14 @@
       "source": "Viator listing supplied by Bill"
     },
     {
-      "name": "San Francisco Hop-On, Hop-Off Bus Tour",
+      "name": "Big Bus San Francisco — Hop-On Hop-Off Tour",
       "status": "Booked",
       "owner": "Rob Baker",
-      "date": "Thursday, October 22 · flexible 10 AM–5 PM",
+      "date": "Thursday, October 22 · 10 AM–6 PM operating hours",
       "duration": "Full-day sightseeing at our own pace",
-      "summary": "Hop on and off at your own pace. Planning window 10 AM–5 PM; provider hours unconfirmed.",
-      "website": "",
-      "source": "Family planning information"
+      "summary": "Open-top double-decker sightseeing with flexible hop-on/hop-off stops. Operating hours are 10 AM–6 PM; no need to ride all day.",
+      "website": "https://www.bigbustours.com/en/san-francisco",
+      "source": "Big Bus operator identified and hours supplied by trip organizer"
     }
   ],
   "images": {
@@ -615,14 +615,14 @@
       "day": "Thursday",
       "date": "October 22",
       "title": "See the city from the top deck",
-      "name": "Hop-On, Hop-Off San Francisco",
-      "summary": "Explore San Francisco at your own pace. Rob booked the bus tour; exact provider hours are still to be confirmed.",
-      "image": "https://commons.wikimedia.org/wiki/Special:FilePath/SF_Cable_Car.jpg?width=1400",
-      "imageAlt": "San Francisco cable car and city sightseeing scene",
-      "website": "",
-      "button": "",
+      "name": "Big Bus San Francisco",
+      "summary": "Explore San Francisco on an open-top double-decker bus. Operating hours 10 AM–6 PM; hop on and off at your own pace. Organized by Rob Baker.",
+      "image": "assets/big-bus-sf.svg",
+      "imageAlt": "Illustration of a red open-top double-decker sightseeing bus in San Francisco",
+      "website": "https://www.bigbustours.com/en/san-francisco",
+      "button": "Routes & stops",
       "moments": [],
-      "time": "Flexible · 10 AM–5 PM"
+      "time": "Operating hours · 10 AM–6 PM"
     },
     {
       "day": "Friday",
